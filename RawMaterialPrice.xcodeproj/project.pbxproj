@@ -7,41 +7,337 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51C0DCEFF3DC38A30DFF7090 /* Pods_RawMaterialPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A2C39EAE2F875F4DB7384E /* Pods_RawMaterialPrice.framework */; };
+		AC019EAA20427A5B00E03903 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC019EA820427A5B00E03903 /* TutorialContentsVC.swift */; };
+		AC019EAB20427A5B00E03903 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC019EA920427A5B00E03903 /* TutorialMasterVC.swift */; };
+		AC019EAD20427A7E00E03903 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC019EAC20427A7E00E03903 /* Tutorial.storyboard */; };
+		AC0DC9E120A159FD00AAB35D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9D620A159FD00AAB35D /* FMDatabaseQueue.m */; };
+		AC0DC9E220A159FD00AAB35D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9D620A159FD00AAB35D /* FMDatabaseQueue.m */; };
+		AC0DC9E320A159FD00AAB35D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9D820A159FD00AAB35D /* FMDatabasePool.m */; };
+		AC0DC9E420A159FD00AAB35D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9D820A159FD00AAB35D /* FMDatabasePool.m */; };
+		AC0DC9E520A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */; };
+		AC0DC9E620A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */; };
+		AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC0DC9DD20A159FD00AAB35D /* Info.plist */; };
+		AC0DC9E820A159FD00AAB35D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC0DC9DD20A159FD00AAB35D /* Info.plist */; };
+		AC0DC9E920A159FD00AAB35D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */; };
+		AC0DC9EA20A159FD00AAB35D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */; };
+		AC0DC9EB20A159FD00AAB35D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9E020A159FD00AAB35D /* FMDatabase.m */; };
+		AC0DC9EC20A159FD00AAB35D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9E020A159FD00AAB35D /* FMDatabase.m */; };
+		AC13ADAD1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADAC1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift */; };
+		AC13ADAF1FAABD5F00FF69E3 /* MaterialPriceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADAE1FAABD5F00FF69E3 /* MaterialPriceListVC.swift */; };
+		AC13ADB11FAABDA400FF69E3 /* MaterialPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADB01FAABDA400FF69E3 /* MaterialPriceCell.swift */; };
+		AC1F2DDB202AFAD600640C41 /* FMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDB.swift */; };
+		AC25BD6C203153B200B19726 /* CHSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD64203153B000B19726 /* CHSeries.swift */; };
+		AC25BD6D203153B200B19726 /* CHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD65203153B100B19726 /* CHExtension.swift */; };
+		AC25BD6E203153B200B19726 /* CHKLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD66203153B100B19726 /* CHKLineChart.swift */; };
+		AC25BD6F203153B200B19726 /* CHAxisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD67203153B100B19726 /* CHAxisModel.swift */; };
+		AC25BD70203153B200B19726 /* CHKLineChartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD68203153B100B19726 /* CHKLineChartStyle.swift */; };
+		AC25BD71203153B200B19726 /* CHChartAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD69203153B100B19726 /* CHChartAlgorithm.swift */; };
+		AC25BD72203153B200B19726 /* CHChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD6A203153B100B19726 /* CHChartModel.swift */; };
+		AC25BD73203153B200B19726 /* CHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD6B203153B200B19726 /* CHSection.swift */; };
+		AC2C085F202420F7001E34D3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C085E202420F7001E34D3 /* Utils.swift */; };
+		AC2C086120242618001E34D3 /* ExchangeRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C086020242618001E34D3 /* ExchangeRateCell.swift */; };
+		AC2C0863202426FA001E34D3 /* ExchangeRateListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C0862202426FA001E34D3 /* ExchangeRateListVC.swift */; };
+		AC3780CB202D543F006888DC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3780CA202D543F006888DC /* NotificationCenter.framework */; };
+		AC3780CE202D543F006888DC /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3780CD202D543F006888DC /* TodayVC.swift */; };
+		AC3780D1202D543F006888DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3780CF202D543F006888DC /* MainInterface.storyboard */; };
+		AC3780D5202D543F006888DC /* RawMaterialPriceTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AC3780C9202D543F006888DC /* RawMaterialPriceTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AC3780E1202D5521006888DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C085E202420F7001E34D3 /* Utils.swift */; };
+		AC3780E4202D555A006888DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4FCB8B1FA6B988008E41DB /* Assets.xcassets */; };
+		AC3780E6202D55E0006888DC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */; };
+		AC378106202D566C006888DC /* FMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDB.swift */; };
+		AC378107202D56DF006888DC /* MaterialPriceJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */; };
+		AC378109202D5702006888DC /* MaterialPriceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */; };
+		AC37810A202D5707006888DC /* ExchangeRateDataVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */; };
+		AC37810B202D570D006888DC /* ExchangeRateListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E822027F25900109E4E /* ExchangeRateListVO.swift */; };
+		AC37810D202D5719006888DC /* ExchangeRateJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E7E2027F24800109E4E /* ExchangeRateJsonDataDAO.swift */; };
+		AC37810E202D572A006888DC /* ExchangeRateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E7F2027F24800109E4E /* ExchangeRateListDAO.swift */; };
+		AC3868E0202E8594007B8A2E /* exchangeRateList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */; };
+		AC3868E1202E8594007B8A2E /* exchangeRateList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */; };
+		AC3868E3202EB736007B8A2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC3868E2202EB736007B8A2E /* GoogleService-Info.plist */; };
+		AC3868E5202EBC4B007B8A2E /* TabBarWithAdMobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3868E4202EBC4B007B8A2E /* TabBarWithAdMobVC.swift */; };
+		AC38EF04205B820300D182B8 /* MaterialPriceListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38EF03205B820300D182B8 /* MaterialPriceListDAO.swift */; };
+		AC38EF05205B820300D182B8 /* MaterialPriceListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38EF03205B820300D182B8 /* MaterialPriceListDAO.swift */; };
+		AC38EF07205B821C00D182B8 /* materialPriceList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */; };
+		AC38EF08205B821C00D182B8 /* materialPriceList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */; };
+		AC38EF0A205B862D00D182B8 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF09205B862D00D182B8 /* exchangeRateData.sqlite */; };
+		AC38EF0B205B862D00D182B8 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF09205B862D00D182B8 /* exchangeRateData.sqlite */; };
+		AC38EF0D205B863800D182B8 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF0C205B863800D182B8 /* materialPriceData.sqlite */; };
+		AC38EF0E205B863800D182B8 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AC38EF0C205B863800D182B8 /* materialPriceData.sqlite */; };
 		AC4FCB821FA6B988008E41DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FCB811FA6B988008E41DB /* AppDelegate.swift */; };
-		AC4FCB841FA6B988008E41DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FCB831FA6B988008E41DB /* ViewController.swift */; };
 		AC4FCB871FA6B988008E41DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4FCB851FA6B988008E41DB /* Main.storyboard */; };
-		AC4FCB8A1FA6B988008E41DB /* RawMaterialPrice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC4FCB881FA6B988008E41DB /* RawMaterialPrice.xcdatamodeld */; };
 		AC4FCB8C1FA6B988008E41DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4FCB8B1FA6B988008E41DB /* Assets.xcassets */; };
 		AC4FCB8F1FA6B988008E41DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4FCB8D1FA6B988008E41DB /* LaunchScreen.storyboard */; };
+		AC591E71202D944500326B2D /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC591E70202D944500326B2D /* TodayCell.swift */; };
+		AC62BF1E203288B9004396EE /* ExchangeRateChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC62BF1D203288B9004396EE /* ExchangeRateChartVC.swift */; };
+		AC62BF2220329C74004396EE /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC62BF2120329C74004396EE /* Chart.swift */; };
+		AC62BF2420329C86004396EE /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC62BF2320329C86004396EE /* ChartColors.swift */; };
+		AC62BF2620329C8D004396EE /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC62BF2520329C8D004396EE /* ChartSeries.swift */; };
+		ACA33E802027F24800109E4E /* ExchangeRateJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E7E2027F24800109E4E /* ExchangeRateJsonDataDAO.swift */; };
+		ACA33E812027F24800109E4E /* ExchangeRateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E7F2027F24800109E4E /* ExchangeRateListDAO.swift */; };
+		ACA33E842027F25900109E4E /* ExchangeRateListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E822027F25900109E4E /* ExchangeRateListVO.swift */; };
+		ACA33E852027F25900109E4E /* ExchangeRateDataVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */; };
+		ACA33E872027FA1800109E4E /* ExchangeRateAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E862027FA1800109E4E /* ExchangeRateAddVC.swift */; };
+		ACA5483920397E8D00326F36 /* MaterialPriceChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5483820397E8D00326F36 /* MaterialPriceChartVC.swift */; };
+		ACB764201FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */; };
+		ACE62EA11FBBE5080031378A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */; };
+		ACF00E0C1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */; };
+		ACF109331FB6849F00FDCA7E /* MaterialPriceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC3780D3202D543F006888DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC4FCB761FA6B988008E41DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC3780C8202D543F006888DC;
+			remoteInfo = RawMaterialPriceTodayExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC3780D9202D543F006888DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AC3780D5202D543F006888DC /* RawMaterialPriceTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A14BEF138F48284C1873A3E1 /* Pods-RawMaterialPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RawMaterialPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-RawMaterialPrice/Pods-RawMaterialPrice.release.xcconfig"; sourceTree = "<group>"; };
+		AC019EA820427A5B00E03903 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
+		AC019EA920427A5B00E03903 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
+		AC019EAC20427A7E00E03903 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		AC0DC9D520A159FD00AAB35D /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		AC0DC9D620A159FD00AAB35D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		AC0DC9D720A159FD00AAB35D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		AC0DC9D820A159FD00AAB35D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		AC0DC9D920A159FD00AAB35D /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		AC0DC9DA20A159FD00AAB35D /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		AC0DC9DB20A159FD00AAB35D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		AC0DC9DD20A159FD00AAB35D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC0DC9DE20A159FD00AAB35D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		AC0DC9E020A159FD00AAB35D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		AC13ADAC1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceAddVC.swift; sourceTree = "<group>"; };
+		AC13ADAE1FAABD5F00FF69E3 /* MaterialPriceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceListVC.swift; sourceTree = "<group>"; };
+		AC13ADB01FAABDA400FF69E3 /* MaterialPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceCell.swift; sourceTree = "<group>"; };
+		AC1F2DDA202AFAD600640C41 /* FMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDB.swift; sourceTree = "<group>"; };
+		AC25BD64203153B000B19726 /* CHSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSeries.swift; sourceTree = "<group>"; };
+		AC25BD65203153B100B19726 /* CHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHExtension.swift; sourceTree = "<group>"; };
+		AC25BD66203153B100B19726 /* CHKLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHKLineChart.swift; sourceTree = "<group>"; };
+		AC25BD67203153B100B19726 /* CHAxisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHAxisModel.swift; sourceTree = "<group>"; };
+		AC25BD68203153B100B19726 /* CHKLineChartStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHKLineChartStyle.swift; sourceTree = "<group>"; };
+		AC25BD69203153B100B19726 /* CHChartAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartAlgorithm.swift; sourceTree = "<group>"; };
+		AC25BD6A203153B100B19726 /* CHChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartModel.swift; sourceTree = "<group>"; };
+		AC25BD6B203153B200B19726 /* CHSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSection.swift; sourceTree = "<group>"; };
+		AC2C085E202420F7001E34D3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AC2C086020242618001E34D3 /* ExchangeRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCell.swift; sourceTree = "<group>"; };
+		AC2C0862202426FA001E34D3 /* ExchangeRateListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateListVC.swift; sourceTree = "<group>"; };
+		AC3780C9202D543F006888DC /* RawMaterialPriceTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RawMaterialPriceTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3780CA202D543F006888DC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		AC3780CD202D543F006888DC /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
+		AC3780D0202D543F006888DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AC3780D2202D543F006888DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC3780DA202D5487006888DC /* RawMaterialPrice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RawMaterialPrice.entitlements; sourceTree = "<group>"; };
+		AC3780DB202D54C6006888DC /* RawMaterialPriceTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RawMaterialPriceTodayExtension.entitlements; sourceTree = "<group>"; };
+		AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = exchangeRateList.sqlite; sourceTree = "<group>"; };
+		AC3868E2202EB736007B8A2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC3868E4202EBC4B007B8A2E /* TabBarWithAdMobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithAdMobVC.swift; sourceTree = "<group>"; };
+		AC38EF03205B820300D182B8 /* MaterialPriceListDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPriceListDAO.swift; sourceTree = "<group>"; };
+		AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceList.sqlite; sourceTree = "<group>"; };
+		AC38EF09205B862D00D182B8 /* exchangeRateData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = exchangeRateData.sqlite; sourceTree = "<group>"; };
+		AC38EF0C205B863800D182B8 /* materialPriceData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceData.sqlite; sourceTree = "<group>"; };
 		AC4FCB7E1FA6B988008E41DB /* RawMaterialPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawMaterialPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4FCB811FA6B988008E41DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC4FCB831FA6B988008E41DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC4FCB861FA6B988008E41DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC4FCB891FA6B988008E41DB /* RawMaterialPrice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RawMaterialPrice.xcdatamodel; sourceTree = "<group>"; };
 		AC4FCB8B1FA6B988008E41DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC4FCB8E1FA6B988008E41DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC4FCB901FA6B988008E41DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC591E70202D944500326B2D /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		AC62BF1D203288B9004396EE /* ExchangeRateChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateChartVC.swift; sourceTree = "<group>"; };
+		AC62BF2120329C74004396EE /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		AC62BF2320329C86004396EE /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		AC62BF2520329C8D004396EE /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		ACA33E7E2027F24800109E4E /* ExchangeRateJsonDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateJsonDataDAO.swift; sourceTree = "<group>"; };
+		ACA33E7F2027F24800109E4E /* ExchangeRateListDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateListDAO.swift; sourceTree = "<group>"; };
+		ACA33E822027F25900109E4E /* ExchangeRateListVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateListVO.swift; sourceTree = "<group>"; };
+		ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataVO.swift; sourceTree = "<group>"; };
+		ACA33E862027FA1800109E4E /* ExchangeRateAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAddVC.swift; sourceTree = "<group>"; };
+		ACA5483820397E8D00326F36 /* MaterialPriceChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceChartVC.swift; sourceTree = "<group>"; };
+		ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPriceCandleChartVC.swift; sourceTree = "<group>"; };
+		ACE62EA41FBBE5440031378A /* RawMaterialPrice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RawMaterialPrice-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceJsonDataDAO.swift; sourceTree = "<group>"; };
+		ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceListVO.swift; sourceTree = "<group>"; };
+		D6A2C39EAE2F875F4DB7384E /* Pods_RawMaterialPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RawMaterialPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E543CA6D9C02C6B374AC01C5 /* Pods-RawMaterialPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RawMaterialPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RawMaterialPrice/Pods-RawMaterialPrice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC3780C6202D543F006888DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3780E6202D55E0006888DC /* libsqlite3.tbd in Frameworks */,
+				AC3780CB202D543F006888DC /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC4FCB7B1FA6B988008E41DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE62EA11FBBE5080031378A /* libsqlite3.tbd in Frameworks */,
+				51C0DCEFF3DC38A30DFF7090 /* Pods_RawMaterialPrice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8745785D129886CA415BB8E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E543CA6D9C02C6B374AC01C5 /* Pods-RawMaterialPrice.debug.xcconfig */,
+				A14BEF138F48284C1873A3E1 /* Pods-RawMaterialPrice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC019EA720427A2D00E03903 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				AC019EA820427A5B00E03903 /* TutorialContentsVC.swift */,
+				AC019EA920427A5B00E03903 /* TutorialMasterVC.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		AC0DC9D420A159E400AAB35D /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				AC0DC9D720A159FD00AAB35D /* FMDatabase.h */,
+				AC0DC9E020A159FD00AAB35D /* FMDatabase.m */,
+				AC0DC9DB20A159FD00AAB35D /* FMDatabaseAdditions.h */,
+				AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */,
+				AC0DC9DA20A159FD00AAB35D /* FMDatabasePool.h */,
+				AC0DC9D820A159FD00AAB35D /* FMDatabasePool.m */,
+				AC0DC9DE20A159FD00AAB35D /* FMDatabaseQueue.h */,
+				AC0DC9D620A159FD00AAB35D /* FMDatabaseQueue.m */,
+				AC0DC9D920A159FD00AAB35D /* FMDB.h */,
+				AC0DC9D520A159FD00AAB35D /* FMResultSet.h */,
+				AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */,
+				AC0DC9DD20A159FD00AAB35D /* Info.plist */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		AC25BD63203153A100B19726 /* CHKLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				AC25BD67203153B100B19726 /* CHAxisModel.swift */,
+				AC25BD69203153B100B19726 /* CHChartAlgorithm.swift */,
+				AC25BD6A203153B100B19726 /* CHChartModel.swift */,
+				AC25BD65203153B100B19726 /* CHExtension.swift */,
+				AC25BD66203153B100B19726 /* CHKLineChart.swift */,
+				AC25BD68203153B100B19726 /* CHKLineChartStyle.swift */,
+				AC25BD6B203153B200B19726 /* CHSection.swift */,
+				AC25BD64203153B000B19726 /* CHSeries.swift */,
+			);
+			path = CHKLineChart;
+			sourceTree = "<group>";
+		};
+		AC2C085320241FD5001E34D3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC4FCB8D1FA6B988008E41DB /* LaunchScreen.storyboard */,
+				AC019EAC20427A7E00E03903 /* Tutorial.storyboard */,
+				AC4FCB851FA6B988008E41DB /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AC2C085420241FF6001E34D3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC3868E4202EBC4B007B8A2E /* TabBarWithAdMobVC.swift */,
+				AC13ADAE1FAABD5F00FF69E3 /* MaterialPriceListVC.swift */,
+				AC13ADAC1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift */,
+				ACA5483820397E8D00326F36 /* MaterialPriceChartVC.swift */,
+				ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */,
+				AC13ADB01FAABDA400FF69E3 /* MaterialPriceCell.swift */,
+				AC2C0862202426FA001E34D3 /* ExchangeRateListVC.swift */,
+				ACA33E862027FA1800109E4E /* ExchangeRateAddVC.swift */,
+				AC62BF1D203288B9004396EE /* ExchangeRateChartVC.swift */,
+				AC2C086020242618001E34D3 /* ExchangeRateCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AC2C085520242010001E34D3 /* DataAccessObject */ = {
+			isa = PBXGroup;
+			children = (
+				AC1F2DDA202AFAD600640C41 /* FMDB.swift */,
+				ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */,
+				AC38EF03205B820300D182B8 /* MaterialPriceListDAO.swift */,
+				ACA33E7E2027F24800109E4E /* ExchangeRateJsonDataDAO.swift */,
+				ACA33E7F2027F24800109E4E /* ExchangeRateListDAO.swift */,
+			);
+			path = DataAccessObject;
+			sourceTree = "<group>";
+		};
+		AC2C08562024205E001E34D3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AC38EF0C205B863800D182B8 /* materialPriceData.sqlite */,
+				AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */,
+				AC38EF09205B862D00D182B8 /* exchangeRateData.sqlite */,
+				AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AC2C085720242078001E34D3 /* ValueObject */ = {
+			isa = PBXGroup;
+			children = (
+				ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */,
+				ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */,
+				ACA33E822027F25900109E4E /* ExchangeRateListVO.swift */,
+			);
+			path = ValueObject;
+			sourceTree = "<group>";
+		};
+		AC3780CC202D543F006888DC /* RawMaterialPriceTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AC3780DB202D54C6006888DC /* RawMaterialPriceTodayExtension.entitlements */,
+				AC3780CD202D543F006888DC /* TodayVC.swift */,
+				AC591E70202D944500326B2D /* TodayCell.swift */,
+				AC3780CF202D543F006888DC /* MainInterface.storyboard */,
+				AC3780D2202D543F006888DC /* Info.plist */,
+			);
+			path = RawMaterialPriceTodayExtension;
+			sourceTree = "<group>";
+		};
 		AC4FCB751FA6B988008E41DB = {
 			isa = PBXGroup;
 			children = (
+				AC0DC9D420A159E400AAB35D /* FMDB */,
+				AC62BF2020329BEF004396EE /* SwiftChart */,
+				AC25BD63203153A100B19726 /* CHKLineChart */,
 				AC4FCB801FA6B988008E41DB /* RawMaterialPrice */,
+				AC3780CC202D543F006888DC /* RawMaterialPriceTodayExtension */,
 				AC4FCB7F1FA6B988008E41DB /* Products */,
+				AC8B05F01FBBDBD300CC852F /* Frameworks */,
+				8745785D129886CA415BB8E7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				AC4FCB7E1FA6B988008E41DB /* RawMaterialPrice.app */,
+				AC3780C9202D543F006888DC /* RawMaterialPriceTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,31 +353,79 @@
 		AC4FCB801FA6B988008E41DB /* RawMaterialPrice */ = {
 			isa = PBXGroup;
 			children = (
+				AC3780DA202D5487006888DC /* RawMaterialPrice.entitlements */,
 				AC4FCB811FA6B988008E41DB /* AppDelegate.swift */,
-				AC4FCB831FA6B988008E41DB /* ViewController.swift */,
-				AC4FCB851FA6B988008E41DB /* Main.storyboard */,
+				AC2C085E202420F7001E34D3 /* Utils.swift */,
+				AC019EA720427A2D00E03903 /* Tutorial */,
+				AC2C08562024205E001E34D3 /* Database */,
+				AC2C085520242010001E34D3 /* DataAccessObject */,
+				AC2C085720242078001E34D3 /* ValueObject */,
+				AC2C085420241FF6001E34D3 /* ViewController */,
+				AC2C085320241FD5001E34D3 /* Storyboard */,
 				AC4FCB8B1FA6B988008E41DB /* Assets.xcassets */,
-				AC4FCB8D1FA6B988008E41DB /* LaunchScreen.storyboard */,
 				AC4FCB901FA6B988008E41DB /* Info.plist */,
-				AC4FCB881FA6B988008E41DB /* RawMaterialPrice.xcdatamodeld */,
+				AC3868E2202EB736007B8A2E /* GoogleService-Info.plist */,
+				ACE62EA41FBBE5440031378A /* RawMaterialPrice-Bridging-Header.h */,
 			);
 			path = RawMaterialPrice;
+			sourceTree = "<group>";
+		};
+		AC62BF2020329BEF004396EE /* SwiftChart */ = {
+			isa = PBXGroup;
+			children = (
+				AC62BF2120329C74004396EE /* Chart.swift */,
+				AC62BF2320329C86004396EE /* ChartColors.swift */,
+				AC62BF2520329C8D004396EE /* ChartSeries.swift */,
+			);
+			path = SwiftChart;
+			sourceTree = "<group>";
+		};
+		AC8B05F01FBBDBD300CC852F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */,
+				AC3780CA202D543F006888DC /* NotificationCenter.framework */,
+				D6A2C39EAE2F875F4DB7384E /* Pods_RawMaterialPrice.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC4FCB7D1FA6B988008E41DB /* RawMaterialPrice */ = {
+		AC3780C8202D543F006888DC /* RawMaterialPriceTodayExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC4FCB931FA6B988008E41DB /* Build configuration list for PBXNativeTarget "RawMaterialPrice" */;
+			buildConfigurationList = AC3780D6202D543F006888DC /* Build configuration list for PBXNativeTarget "RawMaterialPriceTodayExtension" */;
 			buildPhases = (
-				AC4FCB7A1FA6B988008E41DB /* Sources */,
-				AC4FCB7B1FA6B988008E41DB /* Frameworks */,
-				AC4FCB7C1FA6B988008E41DB /* Resources */,
+				AC3780C5202D543F006888DC /* Sources */,
+				AC3780C6202D543F006888DC /* Frameworks */,
+				AC3780C7202D543F006888DC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = RawMaterialPriceTodayExtension;
+			productName = RawMaterialPriceTodayExtension;
+			productReference = AC3780C9202D543F006888DC /* RawMaterialPriceTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		AC4FCB7D1FA6B988008E41DB /* RawMaterialPrice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4FCB931FA6B988008E41DB /* Build configuration list for PBXNativeTarget "RawMaterialPrice" */;
+			buildPhases = (
+				FF0769F885198D4EC44C0E56 /* [CP] Check Pods Manifest.lock */,
+				AC4FCB7A1FA6B988008E41DB /* Sources */,
+				AC4FCB7B1FA6B988008E41DB /* Frameworks */,
+				AC4FCB7C1FA6B988008E41DB /* Resources */,
+				AC3780D9202D543F006888DC /* Embed App Extensions */,
+				88FCE1D51E5414F00301B4F2 /* [CP] Embed Pods Frameworks */,
+				BD4ED55AB2E086DC561FEF2B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC3780D4202D543F006888DC /* PBXTargetDependency */,
 			);
 			name = RawMaterialPrice;
 			productName = RawMaterialPrice;
@@ -93,13 +438,28 @@
 		AC4FCB761FA6B988008E41DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = dbspark7;
 				TargetAttributes = {
+					AC3780C8202D543F006888DC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					AC4FCB7D1FA6B988008E41DB = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -117,37 +477,189 @@
 			projectRoot = "";
 			targets = (
 				AC4FCB7D1FA6B988008E41DB /* RawMaterialPrice */,
+				AC3780C8202D543F006888DC /* RawMaterialPriceTodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC3780C7202D543F006888DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3780E4202D555A006888DC /* Assets.xcassets in Resources */,
+				AC38EF0E205B863800D182B8 /* materialPriceData.sqlite in Resources */,
+				AC38EF08205B821C00D182B8 /* materialPriceList.sqlite in Resources */,
+				AC3780D1202D543F006888DC /* MainInterface.storyboard in Resources */,
+				AC3868E1202E8594007B8A2E /* exchangeRateList.sqlite in Resources */,
+				AC38EF0B205B862D00D182B8 /* exchangeRateData.sqlite in Resources */,
+				AC0DC9E820A159FD00AAB35D /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC4FCB7C1FA6B988008E41DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC019EAD20427A7E00E03903 /* Tutorial.storyboard in Resources */,
 				AC4FCB8F1FA6B988008E41DB /* LaunchScreen.storyboard in Resources */,
+				AC3868E3202EB736007B8A2E /* GoogleService-Info.plist in Resources */,
+				AC38EF07205B821C00D182B8 /* materialPriceList.sqlite in Resources */,
+				AC3868E0202E8594007B8A2E /* exchangeRateList.sqlite in Resources */,
 				AC4FCB8C1FA6B988008E41DB /* Assets.xcassets in Resources */,
+				AC38EF0A205B862D00D182B8 /* exchangeRateData.sqlite in Resources */,
+				AC38EF0D205B863800D182B8 /* materialPriceData.sqlite in Resources */,
+				AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */,
 				AC4FCB871FA6B988008E41DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88FCE1D51E5414F00301B4F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RawMaterialPrice/Pods-RawMaterialPrice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RawMaterialPrice/Pods-RawMaterialPrice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD4ED55AB2E086DC561FEF2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RawMaterialPrice/Pods-RawMaterialPrice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF0769F885198D4EC44C0E56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RawMaterialPrice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		AC3780C5202D543F006888DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC378107202D56DF006888DC /* MaterialPriceJsonDataDAO.swift in Sources */,
+				AC3780CE202D543F006888DC /* TodayVC.swift in Sources */,
+				AC0DC9E420A159FD00AAB35D /* FMDatabasePool.m in Sources */,
+				AC37810A202D5707006888DC /* ExchangeRateDataVO.swift in Sources */,
+				AC3780E1202D5521006888DC /* Utils.swift in Sources */,
+				AC0DC9E620A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */,
+				AC38EF05205B820300D182B8 /* MaterialPriceListDAO.swift in Sources */,
+				AC0DC9E220A159FD00AAB35D /* FMDatabaseQueue.m in Sources */,
+				AC378106202D566C006888DC /* FMDB.swift in Sources */,
+				AC0DC9EA20A159FD00AAB35D /* FMResultSet.m in Sources */,
+				AC37810E202D572A006888DC /* ExchangeRateListDAO.swift in Sources */,
+				AC37810D202D5719006888DC /* ExchangeRateJsonDataDAO.swift in Sources */,
+				AC591E71202D944500326B2D /* TodayCell.swift in Sources */,
+				AC378109202D5702006888DC /* MaterialPriceListVO.swift in Sources */,
+				AC37810B202D570D006888DC /* ExchangeRateListVO.swift in Sources */,
+				AC0DC9EC20A159FD00AAB35D /* FMDatabase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC4FCB7A1FA6B988008E41DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC4FCB841FA6B988008E41DB /* ViewController.swift in Sources */,
+				AC2C086120242618001E34D3 /* ExchangeRateCell.swift in Sources */,
+				AC0DC9EB20A159FD00AAB35D /* FMDatabase.m in Sources */,
+				AC38EF04205B820300D182B8 /* MaterialPriceListDAO.swift in Sources */,
+				AC25BD71203153B200B19726 /* CHChartAlgorithm.swift in Sources */,
+				AC2C0863202426FA001E34D3 /* ExchangeRateListVC.swift in Sources */,
+				ACA33E872027FA1800109E4E /* ExchangeRateAddVC.swift in Sources */,
+				AC13ADAF1FAABD5F00FF69E3 /* MaterialPriceListVC.swift in Sources */,
+				AC62BF2620329C8D004396EE /* ChartSeries.swift in Sources */,
+				ACA33E852027F25900109E4E /* ExchangeRateDataVO.swift in Sources */,
+				AC1F2DDB202AFAD600640C41 /* FMDB.swift in Sources */,
+				AC019EAB20427A5B00E03903 /* TutorialMasterVC.swift in Sources */,
+				AC25BD6E203153B200B19726 /* CHKLineChart.swift in Sources */,
+				AC25BD73203153B200B19726 /* CHSection.swift in Sources */,
+				AC25BD6C203153B200B19726 /* CHSeries.swift in Sources */,
 				AC4FCB821FA6B988008E41DB /* AppDelegate.swift in Sources */,
-				AC4FCB8A1FA6B988008E41DB /* RawMaterialPrice.xcdatamodeld in Sources */,
+				AC62BF2220329C74004396EE /* Chart.swift in Sources */,
+				AC62BF1E203288B9004396EE /* ExchangeRateChartVC.swift in Sources */,
+				ACA33E842027F25900109E4E /* ExchangeRateListVO.swift in Sources */,
+				AC0DC9E920A159FD00AAB35D /* FMResultSet.m in Sources */,
+				AC3868E5202EBC4B007B8A2E /* TabBarWithAdMobVC.swift in Sources */,
+				ACB764201FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift in Sources */,
+				ACF109331FB6849F00FDCA7E /* MaterialPriceListVO.swift in Sources */,
+				AC25BD70203153B200B19726 /* CHKLineChartStyle.swift in Sources */,
+				AC25BD72203153B200B19726 /* CHChartModel.swift in Sources */,
+				ACA33E802027F24800109E4E /* ExchangeRateJsonDataDAO.swift in Sources */,
+				AC0DC9E520A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */,
+				AC019EAA20427A5B00E03903 /* TutorialContentsVC.swift in Sources */,
+				AC13ADB11FAABDA400FF69E3 /* MaterialPriceCell.swift in Sources */,
+				AC25BD6D203153B200B19726 /* CHExtension.swift in Sources */,
+				ACF00E0C1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift in Sources */,
+				AC13ADAD1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift in Sources */,
+				AC2C085F202420F7001E34D3 /* Utils.swift in Sources */,
+				AC62BF2420329C86004396EE /* ChartColors.swift in Sources */,
+				AC25BD6F203153B200B19726 /* CHAxisModel.swift in Sources */,
+				AC0DC9E120A159FD00AAB35D /* FMDatabaseQueue.m in Sources */,
+				AC0DC9E320A159FD00AAB35D /* FMDatabasePool.m in Sources */,
+				ACA33E812027F24800109E4E /* ExchangeRateListDAO.swift in Sources */,
+				ACA5483920397E8D00326F36 /* MaterialPriceChartVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AC3780D4202D543F006888DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC3780C8202D543F006888DC /* RawMaterialPriceTodayExtension */;
+			targetProxy = AC3780D3202D543F006888DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		AC3780CF202D543F006888DC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC3780D0202D543F006888DC /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		AC4FCB851FA6B988008E41DB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -167,6 +679,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AC3780D7202D543F006888DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RawMaterialPriceTodayExtension/RawMaterialPriceTodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY5E8U82TN;
+				INFOPLIST_FILE = RawMaterialPriceTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.ipdisk.dbspark711.RawMaterialPrice.RawMaterialPriceTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC3780D8202D543F006888DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RawMaterialPriceTodayExtension/RawMaterialPriceTodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY5E8U82TN;
+				INFOPLIST_FILE = RawMaterialPriceTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.ipdisk.dbspark711.RawMaterialPrice.RawMaterialPriceTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		AC4FCB911FA6B988008E41DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -181,6 +729,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -188,6 +737,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -199,6 +749,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -215,7 +766,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -238,6 +789,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -245,6 +797,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -256,6 +809,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -266,7 +820,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -276,13 +830,21 @@
 		};
 		AC4FCB941FA6B988008E41DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E543CA6D9C02C6B374AC01C5 /* Pods-RawMaterialPrice.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RawMaterialPrice/RawMaterialPrice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY5E8U82TN;
 				INFOPLIST_FILE = RawMaterialPrice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.ipdisk.dbspark711.RawMaterialPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -290,13 +852,20 @@
 		};
 		AC4FCB951FA6B988008E41DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A14BEF138F48284C1873A3E1 /* Pods-RawMaterialPrice.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RawMaterialPrice/RawMaterialPrice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY5E8U82TN;
 				INFOPLIST_FILE = RawMaterialPrice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.ipdisk.dbspark711.RawMaterialPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,6 +874,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC3780D6202D543F006888DC /* Build configuration list for PBXNativeTarget "RawMaterialPriceTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC3780D7202D543F006888DC /* Debug */,
+				AC3780D8202D543F006888DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AC4FCB791FA6B988008E41DB /* Build configuration list for PBXProject "RawMaterialPrice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -324,19 +902,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AC4FCB881FA6B988008E41DB /* RawMaterialPrice.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AC4FCB891FA6B988008E41DB /* RawMaterialPrice.xcdatamodel */,
-			);
-			currentVersion = AC4FCB891FA6B988008E41DB /* RawMaterialPrice.xcdatamodel */;
-			path = RawMaterialPrice.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AC4FCB761FA6B988008E41DB /* Project object */;
 }
