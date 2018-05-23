@@ -14,6 +14,7 @@ class ExchangeRateJsonDataDAO: FMDB {
         super.init(resource: "exchangeRateData", type: "sqlite")
     }
     
+    // 데이터베이스에서 마지막 데이터 날짜 가져오기
     private func getLastDate(tableName: String) -> String? {
         var result: String?
         do {
@@ -36,6 +37,7 @@ class ExchangeRateJsonDataDAO: FMDB {
         return result
     }
     
+    // 데이터베이스에 row 생성
     private func create(tableName: String, data: ExchangeRateDataVO) -> Bool {
         do {
             let sql = """
@@ -52,6 +54,7 @@ class ExchangeRateJsonDataDAO: FMDB {
         }
     }
     
+    // 데이터베이스에서 row 삭제
     private func remove(date: String) -> Bool {
         let dao = ExchangeRateListDAO()
         let list = dao.findListData()
@@ -72,9 +75,8 @@ class ExchangeRateJsonDataDAO: FMDB {
         }
     }
     
+    // 데이터베이스에서 row 가져오기
     func find(tableName: String, dateFrom: String? = nil, lastTwoLimit: Bool? = nil) -> [ExchangeRateDataVO] {
-        
-        // 반환할 데이터를 담을 [ExchangeRateData] 타입의 객체 정의
         var dataList = [ExchangeRateDataVO]()
         var whereQuery = ""
         if let _dateFrom = dateFrom {
@@ -118,6 +120,7 @@ class ExchangeRateJsonDataDAO: FMDB {
         return dataList
     }
     
+    // API 호출
     func callAPI() -> Bool {
         guard var startDate = self.getLastDate(tableName: "USD") else {
             return false
@@ -127,7 +130,6 @@ class ExchangeRateJsonDataDAO: FMDB {
         
         do {
             repeat {
-                // 호핀 API 호출을 위한 URI를 생성
                 let url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=\(IDKey.KOREAEXIM_API_KEY)&data=AP01&searchdate=\(startDate)"
                 
                 // REST API를 호출

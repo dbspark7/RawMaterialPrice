@@ -16,7 +16,6 @@ class TutorialContentsVC: UIViewController {
     var imageFile: String!
     
     override func viewDidLoad() {
-        // 전달받은 이미지 정보를 이밎 뷰에 대입한다.
         self.bgImageView.image = UIImage(named: self.imageFile)
     }
 }

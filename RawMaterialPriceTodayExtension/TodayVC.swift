@@ -11,11 +11,13 @@ import NotificationCenter
 
 class TodayVC: UITableViewController, NCWidgetProviding {
     
+    // 원자재 가격 리스트
     lazy var materialPriceList: [MaterialPriceListVO] = {
         let listDAO = MaterialPriceListDAO()
         return listDAO.findListData(isTodayExtension: true)
     }()
     
+    // 환율 가격 리스트
     lazy var exchangeRateList: [ExchangeRateListVO] = {
         let listDAO = ExchangeRateListDAO()
         return listDAO.findListData(isTodayExtension: true)

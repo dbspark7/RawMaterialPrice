@@ -129,8 +129,6 @@ class MaterialPriceChartVC: UIViewController, ChartDelegate {
             }
             
             priceLabelLeadingMarginConstraint.constant = priceConstant
-            
-            
         }
         
         if let date = priceData[indexes[0]!][0] as? String {

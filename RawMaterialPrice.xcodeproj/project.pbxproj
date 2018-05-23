@@ -80,8 +80,8 @@
 		ACD28E7D20B5002C005113E7 /* IDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD28E7B20B4FCD2005113E7 /* IDKey.swift */; };
 		ACD28E7F20B50233005113E7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */; };
 		ACD28E8020B50233005113E7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */; };
-		ACD28E8220B50245005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8120B50245005113E7 /* materialPriceData.sqlite */; };
-		ACD28E8320B50245005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8120B50245005113E7 /* materialPriceData.sqlite */; };
+		ACD28E8520B50B49005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */; };
+		ACD28E8620B50B49005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */; };
 		ACE62EA11FBBE5080031378A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */; };
 		ACF00E0C1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */; };
 		ACF109331FB6849F00FDCA7E /* MaterialPriceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */; };
@@ -176,7 +176,7 @@
 		ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPriceCandleChartVC.swift; sourceTree = "<group>"; };
 		ACD28E7B20B4FCD2005113E7 /* IDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDKey.swift; sourceTree = "<group>"; };
 		ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = exchangeRateData.sqlite; sourceTree = "<group>"; };
-		ACD28E8120B50245005113E7 /* materialPriceData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceData.sqlite; sourceTree = "<group>"; };
+		ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceData.sqlite; sourceTree = "<group>"; };
 		ACE62EA41FBBE5440031378A /* RawMaterialPrice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RawMaterialPrice-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceJsonDataDAO.swift; sourceTree = "<group>"; };
 		ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceListVO.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 		AC2C08562024205E001E34D3 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				ACD28E8120B50245005113E7 /* materialPriceData.sqlite */,
+				ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */,
 				AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */,
 				ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */,
 				AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */,
@@ -492,7 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3780E4202D555A006888DC /* Assets.xcassets in Resources */,
-				ACD28E8320B50245005113E7 /* materialPriceData.sqlite in Resources */,
+				ACD28E8620B50B49005113E7 /* materialPriceData.sqlite in Resources */,
 				AC38EF08205B821C00D182B8 /* materialPriceList.sqlite in Resources */,
 				AC3780D1202D543F006888DC /* MainInterface.storyboard in Resources */,
 				AC3868E1202E8594007B8A2E /* exchangeRateList.sqlite in Resources */,
@@ -513,7 +513,7 @@
 				AC4FCB8C1FA6B988008E41DB /* Assets.xcassets in Resources */,
 				AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */,
 				ACD28E7F20B50233005113E7 /* exchangeRateData.sqlite in Resources */,
-				ACD28E8220B50245005113E7 /* materialPriceData.sqlite in Resources */,
+				ACD28E8520B50B49005113E7 /* materialPriceData.sqlite in Resources */,
 				AC4FCB871FA6B988008E41DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

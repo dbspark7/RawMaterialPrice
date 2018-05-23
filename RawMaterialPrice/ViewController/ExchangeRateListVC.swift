@@ -14,9 +14,10 @@ class ExchangeRateListVC: UITableViewController {
     @IBOutlet weak var indicatorText: UILabel!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let listDAO = ExchangeRateListDAO()
     
+    // 선택된 항목
     lazy var selectionList: [ExchangeRateListVO] = {
-        let listDAO = ExchangeRateListDAO()
         return listDAO.findListData(selection: true)
     }()
     
@@ -76,7 +77,6 @@ class ExchangeRateListVC: UITableViewController {
             return
         }
         
-        // (3) 값을 전달한 다음, 상세 화면으로 이동한다.
         vc.param = self.selectionList[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -85,8 +85,7 @@ class ExchangeRateListVC: UITableViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
             let jsonDataDAO = ExchangeRateJsonDataDAO()
-            let listDAO = ExchangeRateListDAO()
-            let list = listDAO.findListData(selection: true)
+            let list = self.listDAO.findListData(selection: true)
             
             guard jsonDataDAO.callAPI() == true else {
                 self.warningAlert("데이터 불러오기 실패!")
@@ -95,13 +94,13 @@ class ExchangeRateListVC: UITableViewController {
             
             for data in list {
                 if let tableName = data.tableName {
-                    guard listDAO.editListData(tableName: tableName) == true else {
+                    guard self.listDAO.editListData(tableName: tableName) == true else {
                         self.warningAlert("데이터 수정 실패!")
                         return
                     }
                 }
             }
-            self.selectionList = listDAO.findListData(selection: true)
+            self.selectionList = self.listDAO.findListData(selection: true)
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
@@ -115,6 +114,7 @@ class ExchangeRateListVC: UITableViewController {
         }
     }
     
+    // 당겨서 새로고침
     @objc func pullToRefresh(_ sender: Any) {
         self.updateData(isRefresh: true)
     }

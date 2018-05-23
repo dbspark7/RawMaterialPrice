@@ -14,8 +14,8 @@ class MaterialPriceListDAO: FMDB {
         super.init(resource: "materialPriceList", type: "sqlite")
     }
     
+    // 메인 화면 리스트 호출
     func findListData(selection: Bool? = nil, isTodayExtension: Bool? = nil) -> [MaterialPriceListVO] {
-        // 반환할 데이터를 담을 [MaterialPriceDataVO] 타입의 객체 정의
         var materialPriceList = [MaterialPriceListVO]()
         
         do {
@@ -60,6 +60,7 @@ class MaterialPriceListDAO: FMDB {
         return materialPriceList
     }
     
+    // 리스트 수정시 호출
     func editListData(tableName: String) -> Bool {
         let jsonDataDAO = MaterialPriceJsonDataDAO()
         
@@ -129,6 +130,7 @@ class MaterialPriceListDAO: FMDB {
         }
     }
     
+    // 테이블 뷰에서 순서만 변경할 경우 호출
     func editTurn(tableName: String, turn: Int32) -> Bool {
         do {
             var params = [Any]()

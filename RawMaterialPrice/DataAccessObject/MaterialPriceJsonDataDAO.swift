@@ -14,6 +14,7 @@ class MaterialPriceJsonDataDAO: FMDB {
         super.init(resource: "materialPriceData", type: "sqlite")
     }
     
+    // 데이터베이스에서 마지막 데이터 날짜 가져오기
     private func getLastDate(tableName: String) -> String? {
         var result: String?
         do {
@@ -36,6 +37,7 @@ class MaterialPriceJsonDataDAO: FMDB {
         return result
     }
     
+    // 데이터베이스에 row 생성
     private func create(tableName: String, data: NSArray) -> Bool {
         do {
             let sql: String?
@@ -125,6 +127,7 @@ class MaterialPriceJsonDataDAO: FMDB {
         }
     }
     
+    // 데이터베이스에서 row 삭제
     private func remove(tableName: String, date: String) -> Bool {
         do {
             let sql = "DELETE FROM \(tableName) WHERE date= ? "
@@ -138,12 +141,12 @@ class MaterialPriceJsonDataDAO: FMDB {
         }
     }
     
+    // 데이터베이스에서 row 가져오기
     func find(tableName: String, dateFrom: String? = nil, lastTwoLimit: Bool? = nil) -> [NSArray] {
-        // 반환할 데이터를 담을 [DepartRecord] 타입의 객체 정의
         var dataList = [NSArray]()
         
         do {
-            // 1. 부서 정보 목록을 가져올 SQL 작성 및 쿼리 실행
+            // 데이터 목록을 가져올 SQL 작성 및 쿼리 실행
             var sql: String?
             switch tableName {
             case MaterialType.wtiCrudeOil.table(),
@@ -192,7 +195,7 @@ class MaterialPriceJsonDataDAO: FMDB {
             
             let rs = try self.fmdb.executeQuery(sql!, values: nil)
             
-            // 2. 결과 집합 추출
+            // 결과 집합 추출
             while rs.next() {
                 let data = NSMutableArray()
                 data.add(rs.string(forColumn: "date") ?? "0")
@@ -303,6 +306,7 @@ class MaterialPriceJsonDataDAO: FMDB {
         return dataList
     }
     
+    // API 호출
     func callAPI(tableName: String) -> Bool {
         guard let startDate = self.getLastDate(tableName: tableName) else {
             return false
@@ -353,10 +357,10 @@ class MaterialPriceJsonDataDAO: FMDB {
             url = ""
         }
         url.append("?api_key=\(IDKey.QUANDL_API_KEY)&order=asc&start_date=\(startDate)")
-        let apiURI: URL! = URL(string: url)
         
         do {
             // REST API를 호출
+            let apiURI: URL! = URL(string: url)
             let apidata = try Data(contentsOf: apiURI)
             guard self.remove(tableName: tableName, date: startDate) == true else {
                 return false

@@ -14,13 +14,15 @@ class MaterialPriceListVC: UITableViewController {
     @IBOutlet weak var indicatorText: UILabel!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let listDAO = MaterialPriceListDAO()
     
+    // 선택된 항목
     lazy var selectionList: [MaterialPriceListVO] = {
-        let listDAO = MaterialPriceListDAO()
         return listDAO.findListData(selection: true)
     }()
     
     override func viewWillAppear(_ animated: Bool) {
+        // 튜토리얼 불러오기
         let ud = UserDefaults.standard
         if ud.bool(forKey: "TUTORIAL") == false {
             let vc = self.instanceTutorialVC(name: "MasterVC")
@@ -28,6 +30,7 @@ class MaterialPriceListVC: UITableViewController {
             return
         }
         
+        // 차트 변경시 인디케이터 뷰가 작동하지 않게 설정
         if self.appDelegate.isLoadingChart == false {
             self.indicatorView.startAnimating()
             self.indicatorText.isHidden = false
@@ -91,8 +94,7 @@ class MaterialPriceListVC: UITableViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
             let jsonDataDAO = MaterialPriceJsonDataDAO()
-            let listDAO = MaterialPriceListDAO()
-            let list = listDAO.findListData(selection: true)
+            let list = self.listDAO.findListData(selection: true)
             
             for data in list {
                 if let tableName = data.tableName {
@@ -100,13 +102,13 @@ class MaterialPriceListVC: UITableViewController {
                         self.warningAlert("데이터 불러오기 실패!")
                         return
                     }
-                    guard listDAO.editListData(tableName: tableName) == true else {
+                    guard self.listDAO.editListData(tableName: tableName) == true else {
                         self.warningAlert("데이터 수정 실패!")
                         return
                     }
                 }
             }
-            self.selectionList = listDAO.findListData(selection: true)
+            self.selectionList = self.listDAO.findListData(selection: true)
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
@@ -119,7 +121,8 @@ class MaterialPriceListVC: UITableViewController {
             }
         }
     }
- 
+    
+    // 당겨서 새로고침
     @objc func pullToRefresh(_ sender: Any) {
         self.updateData(isRefresh: true)
     }

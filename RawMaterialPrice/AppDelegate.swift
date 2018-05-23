@@ -14,8 +14,8 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var isLoadingChart = false
-    var admobIsOn = true
+    var isLoadingChart = false // 차트 로딩 여부
+    var admobIsOn = true // 애드몹 설정
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

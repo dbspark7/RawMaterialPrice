@@ -14,8 +14,8 @@ class ExchangeRateListDAO: FMDB {
         super.init(resource: "exchangeRateList", type: "sqlite")
     }
     
+    // 메인 화면 리스트 호출
     func findListData(selection: Bool? = nil, isTodayExtension: Bool? = nil) -> [ExchangeRateListVO] {
-        // 반환할 데이터를 담을 [PriceData] 타입의 객체 정의
         var list = [ExchangeRateListVO]()
         
         do {
@@ -38,7 +38,7 @@ class ExchangeRateListDAO: FMDB {
             
             let rs = try self.fmdb.executeQuery(sql, values: nil)
             
-            // 2. 결과 집합 추출
+            // 결과 집합 추출
             while rs.next() {
                 let data = ExchangeRateListVO()
                 data.state_cd = Int(rs.int(forColumn: "state_cd"))
@@ -59,6 +59,7 @@ class ExchangeRateListDAO: FMDB {
         return list
     }
     
+    // 리스트 수정시 호출
     func editListData(tableName: String) -> Bool {
         let dao = ExchangeRateJsonDataDAO()
         
@@ -96,6 +97,7 @@ class ExchangeRateListDAO: FMDB {
         }
     }
     
+    // 테이블 뷰에서 순서만 변경할 경우 호출
     func editTurn(tableName: String, turn: Int32) -> Bool {
         do {
             var params = [Any]()

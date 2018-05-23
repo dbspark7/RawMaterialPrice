@@ -23,16 +23,16 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
         startButton.addTarget(self, action: #selector(close(_:)), for: .touchUpInside)
         self.view.addSubview(startButton)
         
-        // 1. 페이지 뷰 컨트롤러 객체 생성하기
+        // 페이지 뷰 컨트롤러 객체 생성
         self.pageVC = self.instanceTutorialVC(name: "PageVC") as! UIPageViewController
         self.pageVC.dataSource = self
         self.pageVC.delegate = self
         
-        // 2. 페이지 뷰 컨트롤러의 기본 페이지 지정
+        // 페이지 뷰 컨트롤러의 기본 페이지 지정
         let startContentVC = self.getContentVC(atIndex: 0)! // 최초 노출될 콘텐츠 뷰 컨트롤러
         self.pageVC.setViewControllers([startContentVC], direction: .forward, animated: true)
         
-        // 3. 페이지 뷰 컨트롤러의 출력 영역 지정
+        // 페이지 뷰 컨트롤러의 출력 영역 지정
         self.pageVC.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC.view.frame.size.width = self.view.frame.width
         self.pageVC.view.frame.size.height = self.view.frame.height - 50
@@ -41,7 +41,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         
-        // 4. 페이지 뷰 컨트롤러를 마스터 뷰 컨트롤러의 자식 뷰 컨트롤러로 설정
+        // 페이지 뷰 컨트롤러를 마스터 뷰 컨트롤러의 자식 뷰 컨트롤러로 설정
         self.addChildViewController(self.pageVC) // (1)
         self.view.addSubview(self.pageVC.view) // (2)
         self.pageVC.didMove(toParentViewController: self) // (3)
@@ -58,7 +58,6 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
             return nil
         }
         // 콘텐츠 뷰 컨트롤러의 내용을 구성
-        //cvc.titleText = self.contentTitles[idx]
         cvc.imageFile = self.contentImages[idx]
         cvc.pageIndex = idx
         return cvc

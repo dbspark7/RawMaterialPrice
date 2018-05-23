@@ -14,49 +14,50 @@ public enum MaterialType: Int {
     func table() -> String {
         switch self {
         case .wtiCrudeOil:
-            return "wtiCrudeOil"
+            return "wtiCrudeOil" // WTI 원유
         case .brentCrudeOil:
-            return "brentCrudeOil"
+            return "brentCrudeOil" // 브랜트산 원유
         case .opecCrudeOil:
-            return "opecCrudeOil"
+            return "opecCrudeOil" // OPEC 원유
         case .naturalGas:
-            return "naturalGas"
+            return "naturalGas" // 천연가스
         case .coal:
-            return "coal"
+            return "coal" // 석탄
         case .aluminum:
-            return "aluminum"
+            return "aluminum" // 알루미늄
         case .cobalt:
-            return "cobalt"
+            return "cobalt" // 코발트
         case .copper:
-            return "copper"
+            return "copper" // 구리
         case .iron:
-            return "iron"
+            return "iron" // 철
         case .lead:
-            return "lead"
+            return "lead" // 납
         case .molybdenum:
-            return "molybdenum"
+            return "molybdenum" // 몰리브덴
         case .nickel:
-            return "nickel"
+            return "nickel" // 니켈
         case .steel:
-            return "steel"
+            return "steel" // 철강
         case .tin:
-            return "tin"
+            return "tin" // 주석
         case .zinc:
-            return "zinc"
+            return "zinc" // 아연
         case .gold:
-            return "gold"
+            return "gold" // 금
         case .silver:
-            return "silver"
+            return "silver" // 은
         case .platinum:
-            return "platinum"
+            return "platinum" // 백금
         case .palladium:
-            return "palladium"
+            return "palladium" // 팔라듐
         case .bitcoin:
-            return "bitcoin"
+            return "bitcoin" // 비트코인
         }
     }
 }
 
+// 튜토리얼 관련 extension
 extension UIViewController {
     var tutorialSB: UIStoryboard {
         return UIStoryboard(name: "Tutorial", bundle: Bundle.main)
@@ -66,6 +67,7 @@ extension UIViewController {
     }
 }
 
+// String 값에서 Float 또는 Double로 변환하는 extension
 extension String {
     var customFloatConverter: Float {
         let converter = NumberFormatter()
@@ -90,6 +92,7 @@ extension String {
     }
 }
 
+// Float 값에서 String 값으로 변환하는 extension
 extension Float {
     var customStringConverter: String {
         let converter = NumberFormatter()
@@ -115,7 +118,7 @@ extension UIViewController {
     }
 }
 
-// 알림창 Extension
+// 알림창 extension
 extension UIViewController {
     func warningAlert(_ message: String, completion: (()->Void)? = nil) {
         let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)

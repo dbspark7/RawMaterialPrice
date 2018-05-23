@@ -12,10 +12,12 @@ class MaterialPriceAddVC: UITableViewController {
     
     let listDAO = MaterialPriceListDAO()
     
+    // 선택된 항목
     lazy var selectionList: [MaterialPriceListVO] = {
         return listDAO.findListData(selection: true)
     }()
     
+    // 선택되지 않은 항목
     lazy var nonSelectionList: [MaterialPriceListVO] = {
         return listDAO.findListData(selection: false)
     }()
@@ -33,6 +35,7 @@ class MaterialPriceAddVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // 헤더 설정
         let textHeader = UILabel(frame: CGRect(x: 10, y: 5, width: 200, height: 30))
         textHeader.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight(rawValue: 2))
         textHeader.textColor = UIColor.orange
