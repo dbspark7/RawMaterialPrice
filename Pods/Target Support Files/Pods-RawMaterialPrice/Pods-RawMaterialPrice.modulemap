@@ -1,0 +1,6 @@
+framework module Pods_RawMaterialPrice {
+  umbrella header "Pods-RawMaterialPrice-umbrella.h"
+
+  export *
+  module * { export * }
+}
