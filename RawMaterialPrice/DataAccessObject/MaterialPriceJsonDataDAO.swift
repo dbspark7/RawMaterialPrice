@@ -352,7 +352,7 @@ class MaterialPriceJsonDataDAO: FMDB {
         default:
             url = ""
         }
-        url.append("?api_key=QoscRi-6i6bgyhSsRhJs&order=asc&start_date=\(startDate)")
+        url.append("?api_key=\(IDKey.QUANDL_API_KEY)&order=asc&start_date=\(startDate)")
         let apiURI: URL! = URL(string: url)
         
         do {
