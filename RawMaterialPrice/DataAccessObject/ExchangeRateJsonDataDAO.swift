@@ -128,7 +128,7 @@ class ExchangeRateJsonDataDAO: FMDB {
         do {
             repeat {
                 // 호핀 API 호출을 위한 URI를 생성
-                let url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=8XpiOet6Rtk8d171DGTHVPWupAL8mKAM&data=AP01&searchdate=\(startDate)"
+                let url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=\(IDKey.KOREAEXIM_API_KEY)&data=AP01&searchdate=\(startDate)"
                 
                 // REST API를 호출
                 let apiURI: URL! = URL(string: url)
