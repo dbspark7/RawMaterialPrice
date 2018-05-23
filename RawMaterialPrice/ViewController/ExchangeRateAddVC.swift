@@ -10,13 +10,13 @@ import UIKit
 
 class ExchangeRateAddVC: UITableViewController {
     
+    let listDAO = ExchangeRateListDAO()
+    
     lazy var selectionList: [ExchangeRateListVO] = {
-        let listDAO = ExchangeRateListDAO()
         return listDAO.findListData(selection: true)
     }()
     
     lazy var nonSelectionList: [ExchangeRateListVO] = {
-        let listDAO = ExchangeRateListDAO()
         return listDAO.findListData(selection: false)
     }()
     
@@ -26,24 +26,6 @@ class ExchangeRateAddVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.isEditing = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        let listDAO = ExchangeRateListDAO()
-        
-        // selection section의 tableLabel 순서대로 selectionList turn 재정렬
-        for row in 0..<self.selectionList.count {
-            for data in self.selectionList {
-                if data.type == self.tableView.cellForRow(at: IndexPath.init(row: row, section: 0))?.textLabel?.text {
-                    if let tableName = data.tableName {
-                        guard listDAO.editTurn(tableName: tableName, turn: Int32(row)) == true else {
-                            self.warningAlert("데이터 수정 실패!")
-                            return
-                        }
-                    }
-                }
-            }
-        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,71 +83,82 @@ class ExchangeRateAddVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let listDAO = ExchangeRateListDAO()
-        
-        var trigger = true
+        tableView.beginUpdates()
         if indexPath.section == 0 {
-            // 선택한 row 추가
-            tableView.beginUpdates()
-            
-            var row: Int?
-            if self.nonSelectionList.count != 0 {
-                for count in 0..<self.nonSelectionList.count {
-                    if self.selectionList[indexPath.row].state_cd! < self.nonSelectionList[count].state_cd! {
-                        row = count
-                        trigger = false
-                        break
-                    }
-                }
-            }
-            if self.nonSelectionList.count == 0 || trigger == true {
-                row = self.nonSelectionList.count
-            }
-            tableView.insertRows(at: [IndexPath.init(row: row!, section: 1)], with: .automatic)
-            
+            // 포함된 항목에서 제거되는 항목은 turn을 21로 수정
             guard listDAO.editTurn(tableName: self.selectionList[indexPath.row].tableName!, turn: Int32(21)) == true else {
                 self.warningAlert("데이터 수정 실패!")
                 return
             }
-            self.selectionList = listDAO.findListData(selection: true)
-            self.nonSelectionList = listDAO.findListData(selection: false)
             
-            // 선택한 row 삭제
+            // 제거되는 항목 이후의 항목은 turn 값을 1씩 차감
+            for row in indexPath.row + 1..<self.selectionList.count {
+                guard listDAO.editTurn(tableName: self.selectionList[row].tableName!, turn: Int32(row - 1)) == true else {
+                    self.warningAlert("데이터 수정 실패!")
+                    return
+                }
+            }
+            
+            // 제거되는 항목의 row 삭제
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
             
-            // 선택한 row 라벨 텍스트 삽입
-            let newCell = self.tableView.cellForRow(at: IndexPath.init(row: row!, section: 1))
-            newCell?.textLabel?.text = self.nonSelectionList[row!].type
-        }
-        
-        if indexPath.section == 1 {
-            // 선택한 row 추가
-            tableView.beginUpdates()
-            tableView.insertRows(at: [IndexPath.init(row: self.selectionList.count, section: 0)], with: .automatic)
-            
+            // section 1에 제거되는 항목의 row 삽입
+            for row in (0..<self.nonSelectionList.count).reversed() {
+                if self.selectionList[indexPath.row].state_cd! > self.nonSelectionList[row].state_cd! {
+                    tableView.insertRows(at: [IndexPath.init(row: row + 1, section: 1)], with: .automatic)
+                    break
+                } else if row == 0 {
+                    tableView.insertRows(at: [IndexPath.init(row: row, section: 1)], with: .automatic)
+                }
+            }
+        } else {
+            // 포함된 항목으로 추가되는 항목은 turn을 포함된 항목의 count 값으로 수정
             guard listDAO.editTurn(tableName: self.nonSelectionList[indexPath.row].tableName!, turn: Int32(self.selectionList.count)) == true else {
                 self.warningAlert("데이터 수정 실패!")
                 return
             }
-            self.selectionList = listDAO.findListData(selection: true)
-            self.nonSelectionList = listDAO.findListData(selection: false)
             
-            // 선택한 row 삭제
+            // 포함된 항목의 row 삭제
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
             
-            // 선택한 row 라벨 텍스트 삽입
-            let newCell = self.tableView.cellForRow(at: IndexPath.init(row: self.selectionList.count - 1, section: 0))
-            newCell?.textLabel?.text = self.selectionList[self.selectionList.count - 1].type
+            // section 0에 포함된 row 삽입
+            tableView.insertRows(at: [IndexPath.init(row: self.selectionList.count, section: 0)], with: .automatic)
         }
+        
+        // 리스트 갱신
+        self.selectionList = listDAO.findListData(selection: true)
+        self.nonSelectionList = listDAO.findListData(selection: false)
+        
+        tableView.endUpdates()
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        guard destinationIndexPath.section == 0 else {
-            tableView.reloadData()
+        // selectionList의 turn에 목적지 row 반영
+        guard listDAO.editTurn(tableName: self.selectionList[sourceIndexPath.row].tableName!, turn: Int32(destinationIndexPath.row)) == true else {
+            self.warningAlert("데이터 수정 실패!")
             return
         }
+        
+        // 출발점 row가 목적지 row보다 뒤에 있을 때
+        if sourceIndexPath.row > destinationIndexPath.row {
+            // 목적지 row부터 출발점 row - 1까지 selectionList의 turn에 row + 1 반영
+            for row in destinationIndexPath.row..<sourceIndexPath.row {
+                guard listDAO.editTurn(tableName: self.selectionList[row].tableName!, turn: Int32(row + 1)) == true else {
+                    self.warningAlert("데이터 수정 실패!")
+                    return
+                }
+            }
+        } else { // 출발점 row가 목적지 row보다 앞에 있을 때
+            // 출발점 row + 1부터 목적지 row까지 selectionList의 turn에 row - 1 반영
+            for row in sourceIndexPath.row + 1...destinationIndexPath.row {
+                guard listDAO.editTurn(tableName: self.selectionList[row].tableName!, turn: Int32(row - 1)) == true else {
+                    self.warningAlert("데이터 수정 실패!")
+                    return
+                }
+            }
+        }
+        // selectionList 갱신
+        self.selectionList = listDAO.findListData(selection: true)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
