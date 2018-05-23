@@ -26,7 +26,7 @@ class TabBarWithAdMobVC: UITabBarController, GADBannerViewDelegate {
             
             //adViewDidReceiveAd(bannerView)
             
-            bannerView.adUnitID = "ca-app-pub-8516368739403975/5678540580"
+            bannerView.adUnitID = IDKey.AD_UNIT_ID
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
             bannerView.delegate = self
