@@ -9,15 +9,15 @@
 import Foundation
 
 struct IDKey {
-    // Google Mobile Ads SDK ID
+    // Google Mobile Ads SDK ID.
     static let ADS_SDK_ID = "secret"
     
-    // Ad Unit ID
+    // Ad Unit ID.
     static let AD_UNIT_ID = "secret"
     
-    // Quandl API Key
+    // Quandl API Key.
     static let QUANDL_API_KEY = "secret"
     
-    // Koreaexim API Key
+    // Koreaexim API Key.
     static let KOREAEXIM_API_KEY = "secret"
 }
