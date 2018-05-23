@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isLoadingChart = false
-    var admobIsOn = false
+    var admobIsOn = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Initialize the Google Mobile Ads SDK.
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-8516368739403975~1889492904")
+        GADMobileAds.configure(withApplicationID: IDKey.ADS_SDK_ID)
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
