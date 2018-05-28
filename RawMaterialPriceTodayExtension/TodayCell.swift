@@ -10,10 +10,10 @@ import UIKit
 
 class TodayCell: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var increaseImage: UIImageView!
-    @IBOutlet weak var variation: UILabel!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var price: UILabel!
+    @IBOutlet var increaseImage: UIImageView!
+    @IBOutlet var variation: UILabel!
     
 }

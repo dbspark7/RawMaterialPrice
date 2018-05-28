@@ -9,10 +9,10 @@
 import UIKit
 
 class ExchangeRateCell: UITableViewCell {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var variation: UILabel!
-    @IBOutlet weak var increase: UIImageView!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var price: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var variation: UILabel!
+    @IBOutlet var increase: UIImageView!
 }
 

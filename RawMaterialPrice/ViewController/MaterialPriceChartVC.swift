@@ -10,40 +10,40 @@ import UIKit
 
 class MaterialPriceChartVC: UIViewController, ChartDelegate {
     
-    @IBOutlet weak var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dateLabelLeadingMarginConstraint: NSLayoutConstraint!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var chart: Chart!
-    @IBOutlet weak var dataFromLabel: UILabel!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
+    @IBOutlet var dateLabelLeadingMarginConstraint: NSLayoutConstraint!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var chart: Chart!
+    @IBOutlet var dataFromLabel: UILabel!
+    @IBOutlet var segmentControl: UISegmentedControl!
     
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    @IBOutlet weak var button9: UIButton!
-    @IBOutlet weak var button10: UIButton!
-    @IBOutlet weak var button11: UIButton!
-    @IBOutlet weak var button12: UIButton!
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    @IBOutlet var button4: UIButton!
+    @IBOutlet var button5: UIButton!
+    @IBOutlet var button6: UIButton!
+    @IBOutlet var button7: UIButton!
+    @IBOutlet var button8: UIButton!
+    @IBOutlet var button9: UIButton!
+    @IBOutlet var button10: UIButton!
+    @IBOutlet var button11: UIButton!
+    @IBOutlet var button12: UIButton!
     
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
-    @IBOutlet weak var label6: UILabel!
-    @IBOutlet weak var label7: UILabel!
-    @IBOutlet weak var label8: UILabel!
-    @IBOutlet weak var label9: UILabel!
-    @IBOutlet weak var label10: UILabel!
-    @IBOutlet weak var label11: UILabel!
-    @IBOutlet weak var label12: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
+    @IBOutlet var label3: UILabel!
+    @IBOutlet var label4: UILabel!
+    @IBOutlet var label5: UILabel!
+    @IBOutlet var label6: UILabel!
+    @IBOutlet var label7: UILabel!
+    @IBOutlet var label8: UILabel!
+    @IBOutlet var label9: UILabel!
+    @IBOutlet var label10: UILabel!
+    @IBOutlet var label11: UILabel!
+    @IBOutlet var label12: UILabel!
     
     fileprivate var priceLabelLeadingMarginInitialConstant: CGFloat!
     fileprivate var dateLabelLeadingMarginInitialConstant: CGFloat!

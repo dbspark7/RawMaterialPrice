@@ -10,8 +10,8 @@ import UIKit
 
 class MaterialPriceListVC: UITableViewController {
     
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var indicatorText: UILabel!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
+    @IBOutlet var indicatorText: UILabel!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let listDAO = MaterialPriceListDAO()

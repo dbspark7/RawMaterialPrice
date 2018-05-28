@@ -11,7 +11,7 @@ import UIKit
 class MaterialPriceCandleChartVC: UIViewController, CHKLineChartDelegate {
     
     @IBOutlet var chartView: CHKLineChartView!
-    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    @IBOutlet var rightBarButton: UIBarButtonItem!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     

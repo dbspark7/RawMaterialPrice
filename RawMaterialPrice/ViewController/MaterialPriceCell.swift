@@ -9,9 +9,9 @@
 import UIKit
 
 class MaterialPriceCell: UITableViewCell {
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var variation: UILabel!
-    @IBOutlet weak var increase: UIImageView!
+    @IBOutlet var type: UILabel!
+    @IBOutlet var price: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var variation: UILabel!
+    @IBOutlet var increase: UIImageView!
 }

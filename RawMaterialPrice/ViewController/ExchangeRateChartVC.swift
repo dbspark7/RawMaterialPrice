@@ -10,22 +10,22 @@ import UIKit
 
 class ExchangeRateChartVC: UIViewController, ChartDelegate {
     
-    @IBOutlet weak var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dateLabelLeadingMarginConstraint: NSLayoutConstraint!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var chart: Chart!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
+    @IBOutlet var dateLabelLeadingMarginConstraint: NSLayoutConstraint!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var chart: Chart!
+    @IBOutlet var segmentControl: UISegmentedControl!
     
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var ttb: UILabel!
-    @IBOutlet weak var tts: UILabel!
-    @IBOutlet weak var deal_bas_r: UILabel!
-    @IBOutlet weak var bkpr: UILabel!
-    @IBOutlet weak var yy_efee_r: UILabel!
-    @IBOutlet weak var ten_dd_efee_r: UILabel!
-    @IBOutlet weak var kftc_bkpr: UILabel!
-    @IBOutlet weak var kftc_deal_bas_r: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var ttb: UILabel!
+    @IBOutlet var tts: UILabel!
+    @IBOutlet var deal_bas_r: UILabel!
+    @IBOutlet var bkpr: UILabel!
+    @IBOutlet var yy_efee_r: UILabel!
+    @IBOutlet var ten_dd_efee_r: UILabel!
+    @IBOutlet var kftc_bkpr: UILabel!
+    @IBOutlet var kftc_deal_bas_r: UILabel!
     
     fileprivate var priceLabelLeadingMarginInitialConstant: CGFloat!
     fileprivate var dateLabelLeadingMarginInitialConstant: CGFloat!
