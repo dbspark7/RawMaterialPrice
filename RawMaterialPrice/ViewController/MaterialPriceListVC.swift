@@ -17,9 +17,12 @@ class MaterialPriceListVC: UITableViewController {
     private let listDAO = MaterialPriceListDAO()
     
     // 선택된 항목
-    lazy var selectionList: [MaterialPriceListVO] = {
+    var selectionList: [MaterialPriceListVO] {
         return listDAO.findListData(selection: true)
-    }()
+    }
+    /*lazy var selectionList: [MaterialPriceListVO] = {
+        return listDAO.findListData(selection: true)
+    }()*/
     
     override func viewWillAppear(_ animated: Bool) {
         // 튜토리얼 불러오기
@@ -93,9 +96,12 @@ class MaterialPriceListVC: UITableViewController {
     private func updateData(isRefresh: Bool? = nil) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
-            let jsonDataDAO = MaterialPriceJsonDataDAO()
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
             
-            for data in self.selectionList {
+            let jsonDataDAO = MaterialPriceJsonDataDAO()
+            //let list = self.listDAO.findListData(selection: true)
+            
+            for data in self.selectionList /* list */ {
                 if let tableName = data.tableName {
                     guard jsonDataDAO.callAPI(tableName: tableName) == true else {
                         self.warningAlert("데이터 불러오기 실패!")
@@ -107,7 +113,7 @@ class MaterialPriceListVC: UITableViewController {
                     }
                 }
             }
-            self.selectionList = self.listDAO.findListData(selection: true)
+            //self.selectionList = self.listDAO.findListData(selection: true)
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
@@ -117,6 +123,7 @@ class MaterialPriceListVC: UITableViewController {
                     self.indicatorView.stopAnimating()
                     self.indicatorText.isHidden = true
                 }
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
         }
     }

@@ -17,9 +17,9 @@ class ExchangeRateListVC: UITableViewController {
     private let listDAO = ExchangeRateListDAO()
     
     // 선택된 항목
-    lazy var selectionList: [ExchangeRateListVO] = {
+    var selectionList: [ExchangeRateListVO] {
         return listDAO.findListData(selection: true)
-    }()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         if self.appDelegate.isLoadingChart == false {
@@ -84,6 +84,8 @@ class ExchangeRateListVC: UITableViewController {
     private func updateData(isRefresh: Bool? = nil) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            
             let jsonDataDAO = ExchangeRateJsonDataDAO()
             
             guard jsonDataDAO.callAPI() == true else {
@@ -99,7 +101,6 @@ class ExchangeRateListVC: UITableViewController {
                     }
                 }
             }
-            self.selectionList = self.listDAO.findListData(selection: true)
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
@@ -109,6 +110,7 @@ class ExchangeRateListVC: UITableViewController {
                     self.indicatorView.stopAnimating()
                     self.indicatorText.isHidden = true
                 }
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
         }
     }
