@@ -14,7 +14,7 @@ class ExchangeRateListVC: UITableViewController {
     @IBOutlet var indicatorText: UILabel!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let listDAO = ExchangeRateListDAO()
+    private let listDAO = ExchangeRateListDAO()
     
     // 선택된 항목
     lazy var selectionList: [ExchangeRateListVO] = {
@@ -85,14 +85,13 @@ class ExchangeRateListVC: UITableViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
             let jsonDataDAO = ExchangeRateJsonDataDAO()
-            let list = self.listDAO.findListData(selection: true)
             
             guard jsonDataDAO.callAPI() == true else {
                 self.warningAlert("데이터 불러오기 실패!")
                 return
             }
             
-            for data in list {
+            for data in self.selectionList {
                 if let tableName = data.tableName {
                     guard self.listDAO.editListData(tableName: tableName) == true else {
                         self.warningAlert("데이터 수정 실패!")

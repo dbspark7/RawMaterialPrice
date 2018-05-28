@@ -14,7 +14,7 @@ class MaterialPriceListVC: UITableViewController {
     @IBOutlet var indicatorText: UILabel!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let listDAO = MaterialPriceListDAO()
+    private let listDAO = MaterialPriceListDAO()
     
     // 선택된 항목
     lazy var selectionList: [MaterialPriceListVO] = {
@@ -94,9 +94,8 @@ class MaterialPriceListVC: UITableViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .utility).async {
             let jsonDataDAO = MaterialPriceJsonDataDAO()
-            let list = self.listDAO.findListData(selection: true)
             
-            for data in list {
+            for data in self.selectionList {
                 if let tableName = data.tableName {
                     guard jsonDataDAO.callAPI(tableName: tableName) == true else {
                         self.warningAlert("데이터 불러오기 실패!")

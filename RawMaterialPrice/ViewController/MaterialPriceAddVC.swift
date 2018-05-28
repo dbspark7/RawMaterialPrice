@@ -10,7 +10,7 @@ import UIKit
 
 class MaterialPriceAddVC: UITableViewController {
     
-    let listDAO = MaterialPriceListDAO()
+    private let listDAO = MaterialPriceListDAO()
     
     // 선택된 항목
     lazy var selectionList: [MaterialPriceListVO] = {

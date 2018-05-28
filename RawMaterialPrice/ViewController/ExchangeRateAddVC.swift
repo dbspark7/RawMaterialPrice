@@ -10,7 +10,7 @@ import UIKit
 
 class ExchangeRateAddVC: UITableViewController {
     
-    let listDAO = ExchangeRateListDAO()
+    private let listDAO = ExchangeRateListDAO()
     
     // 선택된 항목
     lazy var selectionList: [ExchangeRateListVO] = {
