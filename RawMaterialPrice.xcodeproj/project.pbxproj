@@ -26,7 +26,7 @@
 		AC13ADAD1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADAC1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift */; };
 		AC13ADAF1FAABD5F00FF69E3 /* MaterialPriceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADAE1FAABD5F00FF69E3 /* MaterialPriceListVC.swift */; };
 		AC13ADB11FAABDA400FF69E3 /* MaterialPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ADB01FAABDA400FF69E3 /* MaterialPriceCell.swift */; };
-		AC1F2DDB202AFAD600640C41 /* FMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDB.swift */; };
+		AC1F2DDB202AFAD600640C41 /* FMDBExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDBExecution.swift */; };
 		AC25BD6C203153B200B19726 /* CHSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD64203153B000B19726 /* CHSeries.swift */; };
 		AC25BD6D203153B200B19726 /* CHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD65203153B100B19726 /* CHExtension.swift */; };
 		AC25BD6E203153B200B19726 /* CHKLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BD66203153B100B19726 /* CHKLineChart.swift */; };
@@ -45,7 +45,7 @@
 		AC3780E1202D5521006888DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C085E202420F7001E34D3 /* Utils.swift */; };
 		AC3780E4202D555A006888DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4FCB8B1FA6B988008E41DB /* Assets.xcassets */; };
 		AC3780E6202D55E0006888DC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */; };
-		AC378106202D566C006888DC /* FMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDB.swift */; };
+		AC378106202D566C006888DC /* FMDBExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F2DDA202AFAD600640C41 /* FMDBExecution.swift */; };
 		AC378107202D56DF006888DC /* MaterialPriceJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */; };
 		AC378109202D5702006888DC /* MaterialPriceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */; };
 		AC37810A202D5707006888DC /* ExchangeRateDataVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */; };
@@ -75,13 +75,13 @@
 		ACA33E852027F25900109E4E /* ExchangeRateDataVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */; };
 		ACA33E872027FA1800109E4E /* ExchangeRateAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA33E862027FA1800109E4E /* ExchangeRateAddVC.swift */; };
 		ACA5483920397E8D00326F36 /* MaterialPriceChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5483820397E8D00326F36 /* MaterialPriceChartVC.swift */; };
+		ACA9FF3620BBCCB700A096D7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FF3420BBCCB700A096D7 /* materialPriceData.sqlite */; };
+		ACA9FF3720BBCCB700A096D7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FF3420BBCCB700A096D7 /* materialPriceData.sqlite */; };
+		ACA9FF3820BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FF3520BBCCB700A096D7 /* exchangeRateData.sqlite */; };
+		ACA9FF3920BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FF3520BBCCB700A096D7 /* exchangeRateData.sqlite */; };
 		ACB764201FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */; };
 		ACD28E7C20B4FCD2005113E7 /* IDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD28E7B20B4FCD2005113E7 /* IDKey.swift */; };
 		ACD28E7D20B5002C005113E7 /* IDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD28E7B20B4FCD2005113E7 /* IDKey.swift */; };
-		ACD28E7F20B50233005113E7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */; };
-		ACD28E8020B50233005113E7 /* exchangeRateData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */; };
-		ACD28E8520B50B49005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */; };
-		ACD28E8620B50B49005113E7 /* materialPriceData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */; };
 		ACE62EA11FBBE5080031378A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8B05F11FBBDBD300CC852F /* libsqlite3.tbd */; };
 		ACF00E0C1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */; };
 		ACF109331FB6849F00FDCA7E /* MaterialPriceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */; };
@@ -131,7 +131,7 @@
 		AC13ADAC1FAABD0F00FF69E3 /* MaterialPriceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceAddVC.swift; sourceTree = "<group>"; };
 		AC13ADAE1FAABD5F00FF69E3 /* MaterialPriceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceListVC.swift; sourceTree = "<group>"; };
 		AC13ADB01FAABDA400FF69E3 /* MaterialPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceCell.swift; sourceTree = "<group>"; };
-		AC1F2DDA202AFAD600640C41 /* FMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDB.swift; sourceTree = "<group>"; };
+		AC1F2DDA202AFAD600640C41 /* FMDBExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDBExecution.swift; sourceTree = "<group>"; };
 		AC25BD64203153B000B19726 /* CHSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSeries.swift; sourceTree = "<group>"; };
 		AC25BD65203153B100B19726 /* CHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHExtension.swift; sourceTree = "<group>"; };
 		AC25BD66203153B100B19726 /* CHKLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHKLineChart.swift; sourceTree = "<group>"; };
@@ -173,10 +173,10 @@
 		ACA33E832027F25900109E4E /* ExchangeRateDataVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataVO.swift; sourceTree = "<group>"; };
 		ACA33E862027FA1800109E4E /* ExchangeRateAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAddVC.swift; sourceTree = "<group>"; };
 		ACA5483820397E8D00326F36 /* MaterialPriceChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceChartVC.swift; sourceTree = "<group>"; };
+		ACA9FF3420BBCCB700A096D7 /* materialPriceData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceData.sqlite; sourceTree = "<group>"; };
+		ACA9FF3520BBCCB700A096D7 /* exchangeRateData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = exchangeRateData.sqlite; sourceTree = "<group>"; };
 		ACB7641E1FD66ABF00EBA61F /* MaterialPriceCandleChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPriceCandleChartVC.swift; sourceTree = "<group>"; };
 		ACD28E7B20B4FCD2005113E7 /* IDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDKey.swift; sourceTree = "<group>"; };
-		ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = exchangeRateData.sqlite; sourceTree = "<group>"; };
-		ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = materialPriceData.sqlite; sourceTree = "<group>"; };
 		ACE62EA41FBBE5440031378A /* RawMaterialPrice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RawMaterialPrice-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceJsonDataDAO.swift; sourceTree = "<group>"; };
 		ACF109321FB6849F00FDCA7E /* MaterialPriceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPriceListVO.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		AC2C085520242010001E34D3 /* DataAccessObject */ = {
 			isa = PBXGroup;
 			children = (
-				AC1F2DDA202AFAD600640C41 /* FMDB.swift */,
+				AC1F2DDA202AFAD600640C41 /* FMDBExecution.swift */,
 				ACF00E0B1FC3D4AD007CEDB9 /* MaterialPriceJsonDataDAO.swift */,
 				AC38EF03205B820300D182B8 /* MaterialPriceListDAO.swift */,
 				ACA33E7E2027F24800109E4E /* ExchangeRateJsonDataDAO.swift */,
@@ -300,9 +300,9 @@
 		AC2C08562024205E001E34D3 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				ACD28E8420B50B49005113E7 /* materialPriceData.sqlite */,
+				ACA9FF3420BBCCB700A096D7 /* materialPriceData.sqlite */,
 				AC38EF06205B821C00D182B8 /* materialPriceList.sqlite */,
-				ACD28E7E20B50233005113E7 /* exchangeRateData.sqlite */,
+				ACA9FF3520BBCCB700A096D7 /* exchangeRateData.sqlite */,
 				AC3868DF202E8594007B8A2E /* exchangeRateList.sqlite */,
 			);
 			path = Database;
@@ -491,12 +491,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA9FF3720BBCCB700A096D7 /* materialPriceData.sqlite in Resources */,
 				AC3780E4202D555A006888DC /* Assets.xcassets in Resources */,
-				ACD28E8620B50B49005113E7 /* materialPriceData.sqlite in Resources */,
+				ACA9FF3920BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */,
 				AC38EF08205B821C00D182B8 /* materialPriceList.sqlite in Resources */,
 				AC3780D1202D543F006888DC /* MainInterface.storyboard in Resources */,
 				AC3868E1202E8594007B8A2E /* exchangeRateList.sqlite in Resources */,
-				ACD28E8020B50233005113E7 /* exchangeRateData.sqlite in Resources */,
 				AC0DC9E820A159FD00AAB35D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,12 +508,12 @@
 				AC019EAD20427A7E00E03903 /* Tutorial.storyboard in Resources */,
 				AC4FCB8F1FA6B988008E41DB /* LaunchScreen.storyboard in Resources */,
 				AC3868E3202EB736007B8A2E /* GoogleService-Info.plist in Resources */,
+				ACA9FF3620BBCCB700A096D7 /* materialPriceData.sqlite in Resources */,
 				AC38EF07205B821C00D182B8 /* materialPriceList.sqlite in Resources */,
 				AC3868E0202E8594007B8A2E /* exchangeRateList.sqlite in Resources */,
+				ACA9FF3820BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */,
 				AC4FCB8C1FA6B988008E41DB /* Assets.xcassets in Resources */,
 				AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */,
-				ACD28E7F20B50233005113E7 /* exchangeRateData.sqlite in Resources */,
-				ACD28E8520B50B49005113E7 /* materialPriceData.sqlite in Resources */,
 				AC4FCB871FA6B988008E41DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +589,7 @@
 				AC0DC9E620A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */,
 				AC38EF05205B820300D182B8 /* MaterialPriceListDAO.swift in Sources */,
 				AC0DC9E220A159FD00AAB35D /* FMDatabaseQueue.m in Sources */,
-				AC378106202D566C006888DC /* FMDB.swift in Sources */,
+				AC378106202D566C006888DC /* FMDBExecution.swift in Sources */,
 				AC0DC9EA20A159FD00AAB35D /* FMResultSet.m in Sources */,
 				AC37810E202D572A006888DC /* ExchangeRateListDAO.swift in Sources */,
 				AC37810D202D5719006888DC /* ExchangeRateJsonDataDAO.swift in Sources */,
@@ -615,7 +615,7 @@
 				AC62BF2620329C8D004396EE /* ChartSeries.swift in Sources */,
 				ACA33E852027F25900109E4E /* ExchangeRateDataVO.swift in Sources */,
 				ACD28E7C20B4FCD2005113E7 /* IDKey.swift in Sources */,
-				AC1F2DDB202AFAD600640C41 /* FMDB.swift in Sources */,
+				AC1F2DDB202AFAD600640C41 /* FMDBExecution.swift in Sources */,
 				AC019EAB20427A5B00E03903 /* TutorialMasterVC.swift in Sources */,
 				AC25BD6E203153B200B19726 /* CHKLineChart.swift in Sources */,
 				AC25BD73203153B200B19726 /* CHSection.swift in Sources */,

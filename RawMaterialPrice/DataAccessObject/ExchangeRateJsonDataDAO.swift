@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeRateJsonDataDAO: FMDB {
+class ExchangeRateJsonDataDAO: FMDBExecution {
     
     init() {
         super.init(resource: "exchangeRateData", type: "sqlite")

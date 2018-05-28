@@ -108,12 +108,16 @@ class MaterialPriceAddVC: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
             // section 1에 제거되는 항목의 row 삽입
-            for row in (0..<self.nonSelectionList.count).reversed() {
-                if self.selectionList[indexPath.row].type_cd! > self.nonSelectionList[row].type_cd! {
-                    tableView.insertRows(at: [IndexPath.init(row: row + 1, section: 1)], with: .automatic)
-                    break
-                } else if row == 0 {
-                    tableView.insertRows(at: [IndexPath.init(row: row, section: 1)], with: .automatic)
+            if self.nonSelectionList.count == 0 {
+                tableView.insertRows(at: [IndexPath.init(row: 0, section: 1)], with: .automatic)
+            } else {
+                for row in 0..<self.nonSelectionList.count {
+                    if self.selectionList[indexPath.row].type_cd! < self.nonSelectionList[row].type_cd! {
+                        tableView.insertRows(at: [IndexPath.init(row: row, section: 1)], with: .automatic)
+                        break
+                    } else if row == self.nonSelectionList.count - 1 {
+                        tableView.insertRows(at: [IndexPath.init(row: row + 1, section: 1)], with: .automatic)
+                    }
                 }
             }
         } else {

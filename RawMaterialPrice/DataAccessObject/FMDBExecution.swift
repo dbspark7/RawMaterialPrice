@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FMDB {
+class FMDBExecution {
     private var resource: String
     private var type: String
     
@@ -45,7 +45,7 @@ class FMDB {
 }
 
 // 날짜 변환 extnsion
-extension FMDB {
+extension FMDBExecution {
     func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = fromFormat
