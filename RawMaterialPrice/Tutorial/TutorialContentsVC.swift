@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialContentsVC: UIViewController {
     
-    @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet var bgImageView: UIImageView!
     
     var pageIndex: Int!
     var imageFile: String!
