@@ -57,7 +57,25 @@ public enum MaterialType: Int {
     }
 }
 
-// 튜토리얼 관련 extension
+// MARK: - 날짜 변환 프로토콜
+protocol CustomDateFormatter {
+    func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String
+}
+
+extension CustomDateFormatter {
+    func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = fromFormat
+        if let temp = formatter.date(from: date) {
+            formatter.dateFormat = toFormat
+            return formatter.string(from: temp)
+        } else {
+            return "19700101"
+        }
+    }
+}
+
+// MARK: - 튜토리얼 관련 extension
 extension UIViewController {
     var tutorialSB: UIStoryboard {
         return UIStoryboard(name: "Tutorial", bundle: Bundle.main)
@@ -67,7 +85,8 @@ extension UIViewController {
     }
 }
 
-// String 값에서 Float 또는 Double로 변환하는 extension
+// MARK: - String <-> Float 또는 Double 값 변환 extension
+// String 값에서 Float 또는 Double로 변환
 extension String {
     var customFloatConverter: Float {
         let converter = NumberFormatter()
@@ -92,7 +111,7 @@ extension String {
     }
 }
 
-// Float 값에서 String 값으로 변환하는 extension
+// Float 값에서 String 값으로 변환
 extension Float {
     var customStringConverter: String {
         let converter = NumberFormatter()
@@ -107,21 +126,7 @@ extension Float {
     }
 }
 
-// 날짜 변환기
-extension UIViewController {
-    func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = fromFormat
-        if let temp = formatter.date(from: date) {
-            formatter.dateFormat = toFormat
-            return formatter.string(from: temp)
-        } else {
-            return "19700101"
-        }
-    }
-}
-
-// 알림창 extension
+// MARK: - 알림창 extension
 extension UIViewController {
     func warningAlert(_ message: String, completion: (()->Void)? = nil) {
         let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)

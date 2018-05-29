@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaterialPriceListVC: UITableViewController {
+class MaterialPriceListVC: UITableViewController, CustomDateFormatter {
     
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     @IBOutlet var indicatorText: UILabel!

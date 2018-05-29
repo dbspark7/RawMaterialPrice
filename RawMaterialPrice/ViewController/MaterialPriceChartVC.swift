@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaterialPriceChartVC: UIViewController, ChartDelegate {
+class MaterialPriceChartVC: UIViewController, ChartDelegate, CustomDateFormatter {
     
     @IBOutlet var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
     @IBOutlet var dateLabelLeadingMarginConstraint: NSLayoutConstraint!

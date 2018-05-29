@@ -9,7 +9,7 @@
 import UIKit
 import NotificationCenter
 
-class TodayVC: UITableViewController, NCWidgetProviding {
+class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
     
     // 원자재 가격 리스트
     lazy var materialPriceList: [MaterialPriceListVO] = {

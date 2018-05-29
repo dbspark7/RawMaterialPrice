@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaterialPriceJsonDataDAO: FMDBExecution {
+class MaterialPriceJsonDataDAO: FMDBExecution, CustomDateFormatter {
     
     init() {
         super.init(resource: "materialPriceData", type: "sqlite")

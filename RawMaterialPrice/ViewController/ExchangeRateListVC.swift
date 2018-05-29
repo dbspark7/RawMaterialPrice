@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeRateListVC: UITableViewController {
+class ExchangeRateListVC: UITableViewController, CustomDateFormatter {
     
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     @IBOutlet var indicatorText: UILabel!

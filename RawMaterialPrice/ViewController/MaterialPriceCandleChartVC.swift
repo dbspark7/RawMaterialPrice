@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaterialPriceCandleChartVC: UIViewController, CHKLineChartDelegate {
+class MaterialPriceCandleChartVC: UIViewController, CHKLineChartDelegate, CustomDateFormatter {
     
     @IBOutlet var chartView: CHKLineChartView!
     @IBOutlet var rightBarButton: UIBarButtonItem!

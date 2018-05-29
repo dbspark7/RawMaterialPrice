@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeRateChartVC: UIViewController, ChartDelegate {
+class ExchangeRateChartVC: UIViewController, ChartDelegate, CustomDateFormatter {
     
     @IBOutlet var priceLabelLeadingMarginConstraint: NSLayoutConstraint!
     @IBOutlet var dateLabelLeadingMarginConstraint: NSLayoutConstraint!
