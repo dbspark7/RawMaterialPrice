@@ -14,63 +14,45 @@ public enum MaterialType: Int {
     func table() -> String {
         switch self {
         case .wtiCrudeOil:
-            return "wtiCrudeOil" // WTI 원유
+            return "wtiCrudeOil" // 원유(WTI)
         case .brentCrudeOil:
-            return "brentCrudeOil" // 브랜트산 원유
+            return "brentCrudeOil" // 원유(Brent)
         case .opecCrudeOil:
-            return "opecCrudeOil" // OPEC 원유
+            return "opecCrudeOil" // 원유(OPEC)
         case .naturalGas:
             return "naturalGas" // 천연가스
         case .coal:
             return "coal" // 석탄
         case .aluminum:
-            return "aluminum" // 알루미늄
+            return "aluminum" // 알루미늄(Al)
         case .cobalt:
-            return "cobalt" // 코발트
+            return "cobalt" // 코발트(Co)
         case .copper:
-            return "copper" // 구리
+            return "copper" // 구리(Cu)
         case .iron:
-            return "iron" // 철
+            return "iron" // 철광석(Fe)
         case .lead:
-            return "lead" // 납
+            return "lead" // 납(Pb)
         case .molybdenum:
-            return "molybdenum" // 몰리브덴
+            return "molybdenum" // 몰리브덴(Mo)
         case .nickel:
-            return "nickel" // 니켈
+            return "nickel" // 니켈(Ni)
         case .steel:
-            return "steel" // 철강
+            return "steel" // 철강(Steel)
         case .tin:
-            return "tin" // 주석
+            return "tin" // 주석(Sn)
         case .zinc:
-            return "zinc" // 아연
+            return "zinc" // 아연(Zn)
         case .gold:
-            return "gold" // 금
+            return "gold" // 금(Au)
         case .silver:
-            return "silver" // 은
+            return "silver" // 은(Ag)
         case .platinum:
-            return "platinum" // 백금
+            return "platinum" // 백금(Pt)
         case .palladium:
-            return "palladium" // 팔라듐
+            return "palladium" // 팔라듐(Pd)
         case .bitcoin:
             return "bitcoin" // 비트코인
-        }
-    }
-}
-
-// MARK: - 날짜 변환 프로토콜
-protocol CustomDateFormatter {
-    func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String
-}
-
-extension CustomDateFormatter {
-    func convertDateFormat(fromFormat: String, toFormat:String, date: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = fromFormat
-        if let temp = formatter.date(from: date) {
-            formatter.dateFormat = toFormat
-            return formatter.string(from: temp)
-        } else {
-            return "19700101"
         }
     }
 }
@@ -118,6 +100,25 @@ extension Float {
         
         converter.usesGroupingSeparator = true
         converter.groupingSize = 3
+        converter.maximumFractionDigits = 2
+        converter.minimumFractionDigits = 0
+        converter.usesSignificantDigits = true
+        if let result = converter.string(for: self) {
+            return result
+        }
+        return ""
+    }
+}
+
+// Double 값에서 String 값으로 변환
+extension Double {
+    var customStringConverter: String {
+        let converter = NumberFormatter()
+        
+        converter.usesGroupingSeparator = true
+        converter.groupingSize = 3
+        converter.maximumFractionDigits = 2
+        converter.minimumFractionDigits = 0
         converter.usesSignificantDigits = true
         if let result = converter.string(for: self) {
             return result

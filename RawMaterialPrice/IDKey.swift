@@ -20,4 +20,10 @@ struct IDKey {
     
     // Koreaexim API Key.
     static let KOREAEXIM_API_KEY = "8XpiOet6Rtk8d171DGTHVPWupAL8mKAM"
+    
+    // FingerPush App Key
+    static let FINGERPUSH_APP_KEY = "SUM46E9OWT3S1SFUA07FW73CXF76ML4X"
+    
+    // FingerPush App Secret
+    static let FINGERPUSH_APP_SECRET = "oF6uirkyp5fQto3n6hgh4PuErmR3LGh9"
 }

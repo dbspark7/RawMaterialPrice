@@ -11,25 +11,44 @@ import NotificationCenter
 
 class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
     
-    // 원자재 가격 리스트
-    lazy var materialPriceList: [MaterialPriceListVO] = {
-        let listDAO = MaterialPriceListDAO()
-        return listDAO.findListData(isTodayExtension: true)
+    // MARK: - Property
+    // 위젯 리스트
+    lazy var todayExtensionList: [TodayExtensionListVO] = {
+        let listDAO = TodayExtensionListDAO()
+        return listDAO.findList(selection: true)
     }()
     
-    // 환율 가격 리스트
-    lazy var exchangeRateList: [ExchangeRateListVO] = {
-        let listDAO = ExchangeRateListDAO()
-        return listDAO.findListData(isTodayExtension: true)
-    }()
+    // MARK: - override / protocol Method
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view from its nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+        // Perform any setup necessary in order to update the view.
+        
+        // If an error is encountered, use NCUpdateResult.Failed
+        // If there's no update required, use NCUpdateResult.NoData
+        // If there's an update, use NCUpdateResult.NewData
+        
+        completionHandler(NCUpdateResult.newData)
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.materialPriceList.count + self.exchangeRateList.count
+        return self.todayExtensionList.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let count = self.materialPriceList.count + self.exchangeRateList.count
-        switch count {
+        switch self.todayExtensionList.count {
         case 4:
             return self.view.frame.height / 4
         case 3:
@@ -45,9 +64,14 @@ class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "todayCell") as! TodayCell
         
-        if indexPath.row < self.materialPriceList.count {
-            let row = self.materialPriceList[indexPath.row]
-            if let type = row.type, let unit = row.unit, let date = row.date, let todayPrice = row.todayPrice?.customFloatConverter, let dayBeforePrice = row.dayBeforePrice?.customFloatConverter {
+        let row = self.todayExtensionList[indexPath.row]
+        guard let tableName = row.tableName else { return cell }
+        
+        if tableName == "wtiCrudeOil" || tableName == "brentCrudeOil" || tableName == "opecCrudeOil" || tableName == "naturalGas" || tableName == "coal" || tableName == "aluminum" || tableName == "cobalt" || tableName == "copper" || tableName == "iron" || tableName == "lead" || tableName == "molybdenum" || tableName == "nickel" || tableName == "steel" || tableName == "tin" || tableName == "zinc" || tableName == "gold" || tableName == "silver" || tableName == "platinum" || tableName == "palladium" || tableName == "bitcoin" {
+            let dao = MaterialPriceListDAO()
+            let data = dao.findListData(tableName: tableName)
+            
+            if let type = data.first?.type, let unit = data.first?.unit, let date = data.first?.date, let todayPrice = data.first?.todayPrice?.customFloatConverter, let dayBeforePrice = data.first?.dayBeforePrice?.customFloatConverter {
                 cell.name.text = type
                 cell.date.text = self.convertDateFormat(fromFormat: "yyyyMMdd", toFormat: "MM/dd", date: date)
                 cell.price.text = "\(todayPrice.customStringConverter)\(unit)"
@@ -66,8 +90,10 @@ class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
                 }
             }
         } else {
-            let row = self.exchangeRateList[indexPath.row - self.materialPriceList.count]
-            if let type = row.type, let unit = row.unit, let dayBeforePrice = row.dayBeforePrice?.customFloatConverter, let todayPrice = row.todayPrice?.customFloatConverter, let date = row.date {
+            let dao = ExchangeRateListDAO()
+            let data = dao.findListData(tableName: tableName)
+            
+            if let type = data.first?.type, let unit = data.first?.unit, let dayBeforePrice = data.first?.dayBeforePrice?.customFloatConverter, let todayPrice = data.first?.todayPrice?.customFloatConverter, let date = data.first?.date {
                 cell.name.text = type
                 cell.date.text = self.convertDateFormat(fromFormat: "yyyyMMdd", toFormat: "MM/dd", date: date)
                 cell.price.text = "\(todayPrice.customStringConverter)\(unit)"
@@ -94,30 +120,7 @@ class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
         self.extensionContext?.open(url!, completionHandler: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.updateData()
-    }
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
-        completionHandler(NCUpdateResult.newData)
-    }
-
+    // MARK: - Method
     private func updateData() {
         DispatchQueue.global(qos: .utility).async {
             let materialPriceJsonDataDAO = MaterialPriceJsonDataDAO()
@@ -125,20 +128,18 @@ class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
             let exchangeRateJsonDataDAO = ExchangeRateJsonDataDAO()
             let exchangeRateListDAO = ExchangeRateListDAO()
             
-            for data in self.materialPriceList {
-                if let tableName = data.tableName {
+            _ = exchangeRateJsonDataDAO.callAPI()
+            
+            for data in self.todayExtensionList {
+                guard let tableName = data.tableName else { return }
+                
+                if tableName == "wtiCrudeOil" || tableName == "brentCrudeOil" || tableName == "opecCrudeOil" || tableName == "naturalGas" || tableName == "coal" || tableName == "aluminum" || tableName == "cobalt" || tableName == "copper" || tableName == "iron" || tableName == "lead" || tableName == "molybdenum" || tableName == "nickel" || tableName == "steel" || tableName == "tin" || tableName == "zinc" || tableName == "gold" || tableName == "silver" || tableName == "platinum" || tableName == "palladium" || tableName == "bitcoin" {
                     _ = materialPriceJsonDataDAO.callAPI(tableName: tableName)
                     _ = materialPriceListDAO.editListData(tableName: tableName)
-                }
-            }
-            _ = exchangeRateJsonDataDAO.callAPI()
-            for data in self.exchangeRateList {
-                if let tableName = data.tableName {
+                } else {
                     _ = exchangeRateListDAO.editListData(tableName: tableName)
                 }
             }
-            self.materialPriceList = materialPriceListDAO.findListData(isTodayExtension: true)
-            self.exchangeRateList = exchangeRateListDAO.findListData(isTodayExtension: true)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -146,6 +147,7 @@ class TodayVC: UITableViewController, NCWidgetProviding, CustomDateFormatter {
         }
     }
     
+    // MARK: - @IBAction Method
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         let url = URL(string: "priceTodayExtension://")
         self.extensionContext?.open(url!, completionHandler: nil)
