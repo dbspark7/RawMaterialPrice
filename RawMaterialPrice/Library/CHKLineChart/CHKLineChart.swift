@@ -120,8 +120,8 @@ open class CHKLineChartView: UIView {
     fileprivate static let kMinRange = 13       //最小缩放范围
     fileprivate static let kMaxRange = 133     //最大缩放范围
     fileprivate static let kPerInterval = 4    //缩放的每段间隔
-    open let kYAxisLabelWidth: CGFloat = 46        //默认宽度
-	open let kXAxisHegiht: CGFloat = 16        //默认X坐标的高度
+    public let kYAxisLabelWidth: CGFloat = 46        //默认宽度
+    public let kXAxisHegiht: CGFloat = 16        //默认X坐标的高度
 	
 	open var scaleRangeMin: Int = CHKLineChartView.kMinRange
 	open var scaleRangeMax: Int = CHKLineChartView.kMaxRange
@@ -707,10 +707,10 @@ extension CHKLineChartView {
         textStyle.lineBreakMode = NSLineBreakMode.byClipping
         
         let fontAttributes = [
-            NSAttributedStringKey.font: self.labelFont,
-            NSAttributedStringKey.paragraphStyle: textStyle,
-            NSAttributedStringKey.foregroundColor: self.textColor
-            ] as [NSAttributedStringKey : Any]
+            NSAttributedString.Key.font: self.labelFont,
+            NSAttributedString.Key.paragraphStyle: textStyle,
+            NSAttributedString.Key.foregroundColor: self.textColor
+            ] as [NSAttributedString.Key : Any]
         
         //相当 for var i = self.rangeFrom; i < self.rangeTo; i = i + xTickInterval
         for i in stride(from: self.rangeFrom, to: self.rangeTo, by: xTickInterval) {
@@ -964,10 +964,10 @@ extension CHKLineChartView {
         }
         
         let fontAttributes = [
-            NSAttributedStringKey.font: self.labelFont,
-            NSAttributedStringKey.foregroundColor: self.textColor,
-            NSAttributedStringKey.paragraphStyle: paragraphStyle
-            ] as [NSAttributedStringKey : Any]
+            NSAttributedString.Key.font: self.labelFont,
+            NSAttributedString.Key.foregroundColor: self.textColor,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+            ] as [NSAttributedString.Key : Any]
         
         for (yLabelRect, strValue) in yAxisToDraw {
             NSString(string: strValue).draw(in: yLabelRect, withAttributes: fontAttributes)
@@ -1111,7 +1111,7 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
         var interval: Int = 0
         
         //处理滑动的幅度
-        let panRange = fabs(velocity.x)    //滑动的力度
+        let panRange = abs(velocity.x)    //滑动的力度
 //        print("panRange = \(panRange)")
 //        print("translation = \(translation.x)")
 //        print("plotWidth = \(plotWidth)")
@@ -1201,7 +1201,7 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
         var newRangeTo = 0
         var newRangeFrom = 0
         var newRange = 0
-        if fabs(velocity) > 0.1 {   //力度的绝对值大于0.1才起作用
+        if abs(velocity) > 0.1 {   //力度的绝对值大于0.1才起作用
             if scale > 1 {
                 //双指张开
                 newRangeTo = self.rangeTo - interval

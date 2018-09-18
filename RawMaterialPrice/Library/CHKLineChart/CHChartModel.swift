@@ -537,9 +537,9 @@ public extension CHChartModel {
         if isShowValue {
             
             let fontAttributes = [
-                NSAttributedStringKey.font: section.labelFont,
-                NSAttributedStringKey.foregroundColor: guideValueTextColor
-                ] as [NSAttributedStringKey : Any]
+                NSAttributedString.Key.font: section.labelFont,
+                NSAttributedString.Key.foregroundColor: guideValueTextColor
+                ] as [NSAttributedString.Key : Any]
             
             //计算画文字的位置
             let point = CGPoint(x: maxPriceStartX, y: maxPriceStartY)

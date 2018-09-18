@@ -319,8 +319,8 @@ open class CHSection: NSObject {
             NSString(string: seriesTitle).draw(at: point,
                                                withAttributes:
                 [
-                    NSAttributedStringKey.font: self.labelFont,
-                    NSAttributedStringKey.foregroundColor: self.titleColor
+                    NSAttributedString.Key.font: self.labelFont,
+                    NSAttributedString.Key.foregroundColor: self.titleColor
                 ])
             w += seriesTitle.ch_sizeWithConstrained(self.labelFont).width
         }
@@ -369,9 +369,9 @@ open class CHSection: NSObject {
             
             
             let fontAttributes = [
-                NSAttributedStringKey.font: self.labelFont,
-                NSAttributedStringKey.foregroundColor: textColor
-                ] as [NSAttributedStringKey : Any]
+                NSAttributedString.Key.font: self.labelFont,
+                NSAttributedString.Key.foregroundColor: textColor
+                ] as [NSAttributedString.Key : Any]
             
             let point = CGPoint(x: startX + w, y: yPos)
             NSString(string: title).draw(at: point,

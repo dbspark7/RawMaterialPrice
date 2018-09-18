@@ -85,15 +85,15 @@ class ExchangeRateAddVC: UITableViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if indexPath.section == 0 {
-            return UITableViewCellEditingStyle.delete
+            return UITableViewCell.EditingStyle.delete
         } else {
-            return UITableViewCellEditingStyle.insert
+            return UITableViewCell.EditingStyle.insert
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
         if indexPath.section == 0 {
             // 포함된 항목에서 제거되는 항목은 turn을 21로 수정

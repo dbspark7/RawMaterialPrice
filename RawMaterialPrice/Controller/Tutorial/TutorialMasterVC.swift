@@ -86,7 +86,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
     }
     
     private func setup() {
-        let startButton = UIButton(type: UIButtonType.system)
+        let startButton = UIButton(type: UIButton.ButtonType.system)
         startButton.setTitle("시작하기", for: .normal)
         startButton.titleLabel?.font = UIFont.systemFont(ofSize: 19)
         startButton.frame = CGRect(x: (self.view.frame.width - 66) / 2, y: self.view.frame.height - 55, width: 66, height: 35)
@@ -94,7 +94,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
         self.view.addSubview(startButton)
         
         // 페이지 뷰 컨트롤러 객체 생성
-        self.pageVC = self.instanceTutorialVC(name: "PageVC") as! UIPageViewController
+        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
         self.pageVC.dataSource = self
         self.pageVC.delegate = self
         
@@ -112,9 +112,9 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource, UIPage
         pageControl.currentPageIndicatorTintColor = UIColor.black
         
         // 페이지 뷰 컨트롤러를 마스터 뷰 컨트롤러의 자식 뷰 컨트롤러로 설정
-        self.addChildViewController(self.pageVC) // (1)
+        self.addChild(self.pageVC) // (1)
         self.view.addSubview(self.pageVC.view) // (2)
-        self.pageVC.didMove(toParentViewController: self) // (3)
+        self.pageVC.didMove(toParent: self) // (3)
     }
     
     private func getContentVC(atIndex idx: Int) -> UIViewController? {

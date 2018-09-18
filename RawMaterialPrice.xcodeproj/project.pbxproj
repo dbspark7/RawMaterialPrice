@@ -17,8 +17,6 @@
 		AC0DC9E420A159FD00AAB35D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9D820A159FD00AAB35D /* FMDatabasePool.m */; };
 		AC0DC9E520A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */; };
 		AC0DC9E620A159FD00AAB35D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DC20A159FD00AAB35D /* FMDatabaseAdditions.m */; };
-		AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC0DC9DD20A159FD00AAB35D /* Info.plist */; };
-		AC0DC9E820A159FD00AAB35D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC0DC9DD20A159FD00AAB35D /* Info.plist */; };
 		AC0DC9E920A159FD00AAB35D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */; };
 		AC0DC9EA20A159FD00AAB35D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9DF20A159FD00AAB35D /* FMResultSet.m */; };
 		AC0DC9EB20A159FD00AAB35D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0DC9E020A159FD00AAB35D /* FMDatabase.m */; };
@@ -530,6 +528,7 @@
 				TargetAttributes = {
 					AC3780C8202D543F006888DC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -539,7 +538,7 @@
 					};
 					AC4FCB7D1FA6B988008E41DB = {
 						CreatedOnToolsVersion = 9.0.1;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -586,7 +585,6 @@
 				ACA9FF4120BBE83900A096D7 /* materialPriceList.sqlite in Resources */,
 				ACA9FF3920BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */,
 				AC3780D1202D543F006888DC /* MainInterface.storyboard in Resources */,
-				AC0DC9E820A159FD00AAB35D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +604,6 @@
 				ACA9FF3620BBCCB700A096D7 /* materialPriceData.sqlite in Resources */,
 				ACA9FF3820BBCCB700A096D7 /* exchangeRateData.sqlite in Resources */,
 				AC4FCB8C1FA6B988008E41DB /* Assets.xcassets in Resources */,
-				AC0DC9E720A159FD00AAB35D /* Info.plist in Resources */,
 				AC4FCB871FA6B988008E41DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,7 +795,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -816,7 +813,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -955,7 +952,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -980,7 +977,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.ipdisk.dbspark711.RawMaterialPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RawMaterialPrice/RawMaterialPrice-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
